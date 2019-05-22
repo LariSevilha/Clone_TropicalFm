@@ -1,0 +1,15 @@
+
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+
+    attributes:
+      user:
+        created_at: "Criado em"
+        name: "Nome"
+        password: "Senha"
+        password_confirmation: "Confirmar senha"
+        updated_at: "Atualizado em"

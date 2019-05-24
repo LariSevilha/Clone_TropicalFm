@@ -2,11 +2,42 @@
 pt-BR:
   activerecord:
     models:
+      menu:
+        one: "Menu"
+        other: "Menus"
+      link_category:
+        one: "Categoria de Link"
+        other: "Categorias de Link"
+      link:
+        one: "Link"
+        other: "Links"
+      system_parameter: "Parâmetros do Site"
       user:
         one: "Usuário"
         other: "Usuários"
 
+
     attributes:
+      link_category:
+        name: "Nome"
+        menu: "Menu"
+      link:
+        image: "Imagem"
+        link_category: "Categoria do Link"
+        name: "Nome"
+        url: "Url"
+      system_parameter:
+        survey: "Enquete?"
+        photo_gallery: "Galeria de Fotos?"
+        photo_gallery_home: "Galeria de Fotos na Home?"
+        video_gallery: "Vídeos?"
+        video_gallery_home: "Vídeos na Home?"
+        nav_menu: "Menu?"
+        banner: "Banner?"
+        big_slide: "Slide Home?"
+        news: "Notícias?"
+        last_news: "Capa Últimas Notícias?"
+        featured: "Capa Customizada Notícias?"
       user:
         created_at: "Criado em"
         name: "Nome"

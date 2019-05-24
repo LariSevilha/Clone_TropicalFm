@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_24_132134) do
   create_table "menus", force: :cascade do |t|
     t.string "name"
     t.integer "type_menu"
+    t.integer "position_menu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

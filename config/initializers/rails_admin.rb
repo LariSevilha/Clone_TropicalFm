@@ -28,6 +28,7 @@ RailsAdmin.config do |config|
       end
       edit do
         field :type_menu
+        field :position_menu
         field :name
       end
     end

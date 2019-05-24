@@ -26,6 +26,13 @@ pt-BR:
         link_category: "Categoria do Link"
         name: "Nome"
         url: "Url"
+      menu:
+        name: "Nome"
+        type_menu: "Tipo"
+        position_menu: "Posição Menu"
+        position_menus:
+          side: "Lateral"
+          top: "Topo"
       system_parameter:
         survey: "Enquete?"
         photo_gallery: "Galeria de Fotos?"

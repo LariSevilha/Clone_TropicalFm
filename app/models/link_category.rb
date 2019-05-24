@@ -1,0 +1,2 @@
+class LinkCategory < ApplicationRecord
+end

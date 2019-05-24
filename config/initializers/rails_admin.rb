@@ -123,6 +123,8 @@ RailsAdmin.config do |config|
 
     index
 
-    new
+    new do
+      except ['SystemParameter']
+    end
   end
 end

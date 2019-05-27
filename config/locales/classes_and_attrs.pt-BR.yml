@@ -16,7 +16,6 @@ pt-BR:
         one: "Usuário"
         other: "Usuários"
 
-
     attributes:
       link_category:
         name: "Nome"
@@ -29,10 +28,7 @@ pt-BR:
       menu:
         name: "Nome"
         type_menu: "Tipo"
-        position_menu: "Posição Menu"
-        position_menus:
-          side: "Lateral"
-          top: "Topo"
+        position_menu: "Posição"
       system_parameter:
         survey: "Enquete?"
         photo_gallery: "Galeria de Fotos?"

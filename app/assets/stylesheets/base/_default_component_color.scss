@@ -1,0 +1,39 @@
+.text-primary{
+    color: $primary-color !important;
+}
+
+.text-secondary{
+    color: $secondary-color !important;
+}
+
+a.text-primary:focus, a.text-primary:hover{
+    color:$primary-color-dark !important;
+}
+
+a.text-secondary:focus, a.text-secondary:hover{
+    color:$secondary-color-dark !important;
+}
+
+.border-primary{
+    color: $primary-color !important;
+}
+
+.border-secondary{
+    color: $secondary-color !important;
+}
+
+.bg-primary{
+    background-color:$primary-color !important;
+}
+
+a .bg-primary:focus, a .bg-primary:hover, button .bg-primary:focus, button .bg-primary:hover{
+    background-color: $primary-color-dark !important;
+}
+
+.bg-secondary{
+    background-color:$secondary-color !important;
+}
+
+a .bg-secondary:focus, a .bg-secondary:hover, button .bg-secondary:focus, button .bg-secondary:hover{
+    background-color:$secondary-color-dark !important;
+}

@@ -12,7 +12,7 @@ Rails.env.on(:production) do
     :remove_style_attributes => true,
     :remove_link_attributes => true,
     :remove_form_attributes => false,
-    :remove_input_attributes => true,
+    :remove_input_attributes => false,
     :remove_javascript_protocol => true,
     :remove_http_protocol => false,
     :remove_https_protocol => false,

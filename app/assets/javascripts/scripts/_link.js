@@ -12,13 +12,14 @@ var _link = {
 
   current: function(modifier) {
     var path = window.location.pathname.split('/');
-    var url = '';
+    var url = '/' + path[1];
+      
+    $('a[href="'+ path[1] +'"]').addClass(modifier);
+    
+    $('.nav-item a[href="'+ url +'"]').parent().addClass(modifier);
 
-    for (var i = 1; i < path.length; i++) {
-      url += '/' + path[i];
-
-      $('a[href="'+ url +'"]').addClass(modifier);
-    }
+    $('.mega-menu a[href="'+ path[1] +'"]')
+      .parent().parent().parent().parent().parent().parent().addClass(modifier);
   },
 
   prevent: function(link) {

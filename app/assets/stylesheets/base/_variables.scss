@@ -20,18 +20,3 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-.text-primary{
-    color: $primary-color !important;
-}
-
-.text-secondary{
-    color: $secondary-color !important;
-}
-
-a.text-primary:focus, a.text-primary:hover{
-    color:$primary-color-dark !important;
-}
-
-a.text-secondary:focus, a.text-secondary:hover{
-    color:$secondary-color-dark !important;
-}

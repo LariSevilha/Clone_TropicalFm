@@ -22,29 +22,50 @@
 document.addEventListener('turbolinks:load', function() {
   // link
   _link.back(
-    $('.link--back')
+    $('.back')
   );
+  
+  // Tooltips Initialization
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('.mdb-select').materialSelect();
+  })
+
+  // Get the elements
+  var from_input = $('#startingDate').pickadate(_pt_br),
+    from_picker = from_input.pickadate('picker')
+  var to_input = $('#endingDate').pickadate(_pt_br),
+    to_picker = to_input.pickadate('picker')
+
+  try{
+    // Check if there’s a “from” or “to” date to start with and if so, set their appropriate properties.
+    if (from_picker.get('value')) {
+      to_picker.set('min', from_picker.get('select'))
+    }
+    if (to_picker.get('value')) {
+      from_picker.set('max', to_picker.get('select'))
+    }
+
+    // Apply event listeners in case of setting new “from” / “to” limits to have them update on the other end. If ‘clear’ button is pressed, reset the value.
+    from_picker.on('set', function (event) {
+      if (event.select) {
+        to_picker.set('min', from_picker.get('select'))
+      } else if ('clear' in event) {
+        to_picker.set('min', false)
+      }
+    })
+    to_picker.on('set', function (event) {
+      if (event.select) {
+        from_picker.set('max', to_picker.get('select'))
+      } else if ('clear' in event) {
+        from_picker.set('max', false)
+      }
+    })
+  }catch(e){
+  }
 
   _link.current(
-    'link--current'
-  );
-
-  _link.prevent(
-    $('.link--prevent')
-  );
-
-  // owl
-  _owl.slide(
-    $('.slide')
-  );
-
-  // nav
-  _nav.open(
-    $('html'),
-    $('.nav'),
-    $('.nav__link'),
-    $('.nav__btn'),
-    'nav--opened'
+    'active'
   );
 
   // mask

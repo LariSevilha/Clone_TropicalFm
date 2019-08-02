@@ -18,6 +18,7 @@
             background-color: $color !important;
             box-shadow: $z-depth-1-half;
             border-radius: $border-radius-base;
+            color: #fff;
             &.disabled {
               background-color: transparent;
               box-shadow: none;

@@ -20,10 +20,15 @@ var _pt_br = {
   labelYearSelect: 'Selecione um Ano',
 
   // Formats
-  format: 'dd mmmm, yyyy',
+  format: 'dd mmmm yyyy',
   formatSubmit: 'yyyy/mm/dd',
+  hiddenPrefix: undefined,
+  hiddenSuffix: undefined,
+  hiddenName: true,
 
   // Close on a user action
   closeOnSelect: true,
   closeOnClear: true,
+
+  max: new Date(),
 }

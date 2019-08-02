@@ -31,6 +31,9 @@ document.addEventListener('turbolinks:load', function() {
     $('.mdb-select').materialSelect();
   })
 
+  // // Pickadate
+  // $('.datepicker').pickadate(_pt_br);
+  
   // Get the elements
   var from_input = $('#startingDate').pickadate(_pt_br),
     from_picker = from_input.pickadate('picker')

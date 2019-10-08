@@ -1,0 +1,25 @@
+// breakpoints
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xx: 2560px;
+
+$screen-sm:     new-breakpoint(min-width $breakpoint-sm);
+$screen-sm-max: new-breakpoint(max-width $breakpoint-sm);
+
+$screen-md:     new-breakpoint(min-width $breakpoint-md);
+$screen-md-max: new-breakpoint(max-width $breakpoint-md);
+$screen-md-only: new-breakpoint(min-width $breakpoint-sm max-width $breakpoint-md);
+
+$screen-lg:     new-breakpoint(min-width $breakpoint-lg);
+$screen-lg-max: new-breakpoint(max-width $breakpoint-lg);
+$screen-lg-only: new-breakpoint(min-width $breakpoint-md max-width $breakpoint-lg);
+
+$screen-xl:     new-breakpoint(min-width $breakpoint-xl);
+$screen-xl-max: new-breakpoint(max-width $breakpoint-xl);
+$screen-xl-only: new-breakpoint(min-width $breakpoint-lg max-width $breakpoint-xl);
+
+$screen-xx:     new-breakpoint(min-width $breakpoint-xx);
+$screen-xx-max: new-breakpoint(max-width $breakpoint-xx);

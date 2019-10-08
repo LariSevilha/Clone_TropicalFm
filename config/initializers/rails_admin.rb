@@ -4,7 +4,6 @@ RailsAdmin.config do |config|
   config.compact_show_view = false
   #parametro = SystemParameter.first
 
-
   config.authenticate_with do
     warden.authenticate! scope: :user
   end
@@ -134,6 +133,7 @@ RailsAdmin.config do |config|
       list do
         field :id
         field :name
+        field :order
       end
       edit do
         field :menu do
@@ -141,6 +141,7 @@ RailsAdmin.config do |config|
           inline_edit false
         end
         field :name
+        field :order
       end
     end
 
@@ -150,6 +151,7 @@ RailsAdmin.config do |config|
         field :id
         field :name
         field :url
+        field :internal_link
       end
       edit do
         field :link_category do
@@ -159,6 +161,7 @@ RailsAdmin.config do |config|
         field :name
         field :url
         field :image
+        field :internal_link
       end
     end
 

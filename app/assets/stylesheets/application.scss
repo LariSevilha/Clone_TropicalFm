@@ -24,15 +24,19 @@
 
   // base
   @import "base/variables";
+  @import "base/header";
+  @import "base/breakpoints";
+  @import "base/default_component_color";
 
 
   // devise
   @import "devise/*";
 
-  @import "mdb";
+  // MDBoostrap
+  @import "scss/mdb";
 
   // layout
-//   @import "layout/*";
+  // @import "layout/*";
 
   // components
-//   @import "components/*";
+  @import "components/index";

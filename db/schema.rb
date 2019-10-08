@@ -10,10 +10,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_132134) do
+ActiveRecord::Schema.define(version: 2019_10_08_140625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "publish_date"
+    t.string "slug"
+    t.boolean "status", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "subject"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "content_builder_archives", force: :cascade do |t|
+    t.string "name"
+    t.string "file"
+    t.bigint "content_builder_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_builder_id"], name: "index_content_builder_archives_on_content_builder_id"
+  end
+
+  create_table "content_builder_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "content_builder_count_reads", force: :cascade do |t|
+    t.bigint "content_builder_id"
+    t.string "ip"
+    t.string "string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_builder_id"], name: "index_content_builder_count_reads_on_content_builder_id"
+  end
+
+  create_table "content_builder_images", force: :cascade do |t|
+    t.string "image"
+    t.bigint "content_builder_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_builder_id"], name: "index_content_builder_images_on_content_builder_id"
+  end
+
+  create_table "content_builders", force: :cascade do |t|
+    t.string "title"
+    t.string "written_by"
+    t.datetime "date_publish"
+    t.text "content"
+    t.boolean "status", default: false
+    t.string "slug"
+    t.text "summary"
+    t.bigint "content_builder_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_builder_category_id"], name: "index_content_builders_on_content_builder_category_id"
+  end
 
   create_table "link_categories", force: :cascade do |t|
     t.string "name"
@@ -39,6 +106,15 @@ ActiveRecord::Schema.define(version: 2019_05_24_132134) do
     t.integer "position_menu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "image"
+    t.boolean "cover"
+    t.bigint "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_photos_on_album_id"
   end
 
   create_table "system_parameters", force: :cascade do |t|
@@ -76,6 +152,11 @@ ActiveRecord::Schema.define(version: 2019_05_24_132134) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "content_builder_archives", "content_builders"
+  add_foreign_key "content_builder_count_reads", "content_builders"
+  add_foreign_key "content_builder_images", "content_builders"
+  add_foreign_key "content_builders", "content_builder_categories"
   add_foreign_key "link_categories", "menus"
   add_foreign_key "links", "link_categories"
+  add_foreign_key "photos", "albums"
 end

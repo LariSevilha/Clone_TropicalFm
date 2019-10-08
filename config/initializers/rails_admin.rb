@@ -15,6 +15,102 @@ RailsAdmin.config do |config|
   config.actions do
     bulk_delete
 
+    ### Album ###
+    config.model 'Album' do
+
+      navigation_label 'Albuns'
+      list do
+        field :id
+        field :name
+        field :status
+      end
+      edit do
+        field :name
+        field :publish_date
+        field :photos
+        field :description, :wysihtml5 do
+          config_options toolbar: { fa: true, image: false }
+        end
+        field :status
+      end
+    end
+
+    ###  Contact  ###
+    config.model 'Contact' do
+      visible false
+      navigation_label 'Contatos'
+      #navigation_icon 'icon-user'
+      list do
+        field :id
+        field :name
+        field :email
+        field :phone
+      end
+      edit do
+        field :name
+        field :email
+        field :phone
+        field :message
+      end
+      show do
+        field :id
+        field :name
+        field :email
+        field :phone
+        field :message
+      end
+    end
+
+    ### Content Builder ###
+    config.model 'ContentBuilder' do
+
+      navigation_label 'Notícia'
+      list do
+        field :id
+        field :title
+        field :count_read
+        field :date_publish
+        field :status
+      end
+      edit do
+        field :title
+        field :date_publish
+        field :written_by
+        field :content_builder_category do
+          inline_add false
+          inline_edit false
+        end
+        field :summary
+        field :content_builder_archives
+      end
+    end
+
+    ### Content Builder Categories ###
+    config.model 'ContentBuilderCategory' do
+      navigation_label 'Notícia'
+      # navigation_icon 'icon-user'
+      list do
+        field :id
+        field :name
+      end
+      edit do
+        field :name
+      end
+    end
+
+    ### Content Builder Categories ###
+    config.model 'ContentBuilderCountRead' do
+      visible false
+    end
+
+    ### Content Builder Archives ###
+    config.model 'ContentBuilderArchive' do
+      visible false
+      edit do
+        field :name
+        field :file
+      end
+    end
 
     config.model "Menu" do
       navigation_label "Parâmetros"
@@ -63,6 +159,15 @@ RailsAdmin.config do |config|
         field :name
         field :url
         field :image
+      end
+    end
+
+    ### Photo ###
+    config.model 'Photo' do
+      visible false
+      edit do
+        field :image
+        field :cover
       end
     end
 
@@ -127,5 +232,14 @@ RailsAdmin.config do |config|
     new do
       except ['SystemParameter']
     end
+
+    dropzone do
+      only ['Album']
+    end
+
+    content_builder do
+      only ['ContentBuilder']
+    end
+
   end
 end

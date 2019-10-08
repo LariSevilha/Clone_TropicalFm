@@ -2,7 +2,7 @@
 
 It's based on Rails 5.0.0 and Ruby 2.3.1.
 
-MDBootstrap 4.8.8 PRO
+MDBootstrap 4.8.10 PRO
 
 ## How to use
 

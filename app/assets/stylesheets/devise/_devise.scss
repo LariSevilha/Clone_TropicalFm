@@ -86,6 +86,11 @@ $devise-primary: #1DB69B;
   }
 }
 
+.row {
+  display: flex;
+  align-items: center;
+}
+
 .devise__checkbox {
   position: relative;
 

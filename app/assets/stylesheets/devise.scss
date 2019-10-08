@@ -11,10 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require alert_message
- *= require owl.carousel2
  *= require_self
- *= require css/bootstrap.min
- *= require rails_admin_content_builder
 
  */
 
@@ -22,14 +19,5 @@
   @import "bourbon";
   @import "neat";
 
-  // base
-  @import "base/variables";
-  @import "base/header";
-  @import "base/breakpoints";
-  @import "base/default_component_color";
-
-  // MDBoostrap
-  @import "scss/mdb";
-
-  // components
-  @import "components/index";
+  // devise
+  @import "devise/*";

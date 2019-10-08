@@ -94,7 +94,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
 
         if (this.options.destroy) {
+          var $btnSave = this.$nativeSelect.parent().find('button.btn-save').length ? this.$nativeSelect.parent().find('button.btn-save') : false;
           this.$nativeSelect.data('select-id', null).removeClass('initialized');
+          this.$nativeSelect.parent().append($btnSave);
           return;
         }
 
@@ -196,13 +198,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             _this.$materialOptionsList.find('li:not(.optgroup):not(.select-toggle-all)').eq(index).find(':checkbox').prop('checked', true);
           });
         } else {
-          var preselectedOption = this.$nativeSelect.find('option[selected]');
-          var index = preselectedOption.index();
+          var preselectedOption = this.$nativeSelect.find('option[selected]').first();
+          var indexOfPreselectedOption = this.$nativeSelect.find('option').index(preselectedOption.get(0));
 
-          if (preselectedOption.attr('disabled') !== 'disabled' && index >= 0) {
-            this._toggleSelectedValue(index);
-
-            this.$materialOptionsList.find('li').eq(index).addClass('active');
+          if (preselectedOption.attr('disabled') !== 'disabled' && indexOfPreselectedOption >= 0) {
+            this._toggleSelectedValue(indexOfPreselectedOption);
           }
         }
 

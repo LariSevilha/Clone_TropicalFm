@@ -1,4 +1,4 @@
-class CreateContentBuilders < ActiveRecord::Migration[5.2]
+class CreateContentBuilders < ActiveRecord::Migration[5.0]
   def change
     create_table :content_builders do |t|
       t.string :title

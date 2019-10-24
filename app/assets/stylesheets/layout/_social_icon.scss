@@ -1,0 +1,131 @@
+.social__caption {
+  display: block;
+
+  margin: 0 .2em .5em;
+
+  color: rgba($black, .5);
+  font-size: .7em;
+  text-transform: uppercase;
+}
+
+.icon__btn {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 100%;
+  background: rgba($black, .08);
+
+  color: rgba($black, .5);
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  outline: none;
+  @include transition(.1s ease);
+
+  &.icon__btn--fb{
+    &:hover,
+    &:focus {
+      color: $white !important;
+      background: #4264aa;
+    }
+  }
+
+  &.icon__btn--tw{
+    &:hover,
+    &:focus {
+      color: $white !important;
+      background: #6cb7f0;
+    }
+  }
+
+  &.icon__btn--wa{
+    &:hover,
+    &:focus {
+      color: $white !important;
+      background: #56b68b ;
+    }
+  }
+
+  + .btn {
+    margin-left: .5rem;
+  }
+
+  + .link {
+    margin-left: 1rem;
+  }
+}
+
+.icon__btn--tiny {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+
+  font-size: .6em;
+}
+
+.album-modal{
+  .icon__btn--fb{
+    color: $white !important;
+    background: #4264aa;
+    &:hover,
+    &:focus{
+      opacity: 0.5 !important;
+    }
+  }
+
+  .icon__btn--tw{
+    color: $white !important;
+    background: #6cb7f0;
+    &:hover,
+    &:focus{
+      opacity: 0.5 !important;
+    }
+  }
+
+  .icon__btn--wa{
+    color: $white !important;
+    background: #56b68b ;
+    &:hover,
+    &:focus{
+      opacity: 0.5 !important;
+    }
+  }
+
+  .icon__btn--pm{
+    color: $white !important;
+    background: $primary ;
+    &:hover,
+    &:focus{
+      opacity: 0.5 !important;
+    }
+  }
+}
+
+@include media($screen-md) {
+  .social__caption {
+    display: inline-block;
+    margin: 0 .25em;
+  }
+
+  .icon__btn {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+
+    font-size: 1em;
+  }
+
+  .icon__btn--tiny {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+
+    font-size: .8em;
+  }
+}

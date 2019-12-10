@@ -16,38 +16,44 @@
 
   .carousel-inner.v-2 .carousel-item-right.active,
   .carousel-inner.v-2 .carousel-item-next {
-    transform: translateX(33%);
+    transform: translateX(100%);
+    @include media-breakpoint-up ('md') {
+      transform: translateX(33%);
+    }
   }
 
   .carousel-inner.v-2 .carousel-item-left.active,
   .carousel-inner.v-2 .carousel-item-prev {
-    transform: translateX(-33%);
+    transform: translateX(-100%);
+    @include media-breakpoint-up ('md') {
+      transform: translateX(-33%);
+    }
   }
 
   .carousel-inner.v-2 .carousel-item-right,
   .carousel-inner.v-2 .carousel-item-left {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
 
   .carousel-indicators li {
-    height: $carousel-multi-item-indicators-li-height;
     width: $carousel-multi-item-indicators-li-width;
     max-width: $carousel-multi-item-indicators-li-max-width;
-    background-color: $primary-color;
+    height: $carousel-multi-item-indicators-li-height;
     margin-bottom: $carousel-multi-item-indicators-li-mb;
+    background-color: $primary-color;
   }
 
   .carousel-indicators .active {
-    height: $carousel-multi-item-indicators-active-height;
     width: $carousel-multi-item-indicators-active-width;
     max-width: $carousel-multi-item-indicators-active-max-width;
+    height: $carousel-multi-item-indicators-active-height;
     background-color: $primary-color;
     border-radius: $carousel-multi-item-indicators-active-border-radius;
   }
 
   .controls-top {
-    text-align: center;
     margin-bottom: $carousel-multi-item-controls-top-mb;
+    text-align: center;
 
     .btn-floating {
       background: $primary-color;
@@ -83,15 +89,15 @@
 // Carousel with thumbnails
 .carousel-thumbnails {
   .carousel-indicators {
-    white-space: nowrap;
-    overflow-x: auto;
     position: static;
     left: initial;
     width: initial;
-    margin-left: initial;
     margin-right: initial;
+    margin-left: initial;
+    overflow-x: auto;
+    white-space: nowrap;
 
-    >li {
+    > li {
       width: initial;
       height: initial;
       text-indent: initial;
@@ -110,7 +116,7 @@
 
   &.carousel-item-left,
   &.carousel-item-right {
-    transition: transform 0.6s ease;
+    transition: transform .6s ease;
     transition-property: opacity;
   }
 }

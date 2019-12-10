@@ -27,6 +27,7 @@ document.addEventListener('turbolinks:load', function() {
   
   // Tooltips Initialization
   $(function () {
+    $("#mdb-lightbox-ui").load("/vendor/assets/mdb-addons/mdb-lightbox-ui.html");
     $('[data-toggle="tooltip"]').tooltip();
     $('.mdb-select').materialSelect();
   })

@@ -9,8 +9,28 @@
 
 .select-wrapper {
   position: relative;
+  &:not(.md-outline) .select-dropdown {
+    &:focus {
+      border-bottom: 1px solid $input-md-focus-color; 
+      box-shadow: 0 1px 0 0 $input-md-focus-color;
+    }
+  }
 
+  &.active {
+    span.caret,
+    label.mdb-main-label {
+      color: $primary;
+    }
+    & + label {
+      color: $primary;
+    }
+  }
+  
   input {
+    &::selection {
+      background: transparent; 
+    }
+
     &.select-dropdown {
       position: relative;
       z-index: 2;
@@ -90,7 +110,7 @@
     top: .8rem;
     right: 0;
     font-size: $material-select-wrapper-span-caret-font-size;
-    color: initial;
+    color: #495057;;
 
     &.disabled {
       color: rgba(0, 0, 0, .3);
@@ -142,7 +162,6 @@
       left: 0;
       font-size: .8rem;
       transform: translateY(-14px);
-      color: #4285f4;
     }
 
     &.disabled {
@@ -206,8 +225,6 @@
         &.caret {
           padding-right: .75rem;
           padding-left: .75rem;
-          color: #495057 !important;
-
           &.active {
             color: #4285f4 !important;
           }
@@ -239,7 +256,6 @@
         padding-left: 5px;
         font-size: 13px;
         font-weight: 500;
-        color: #757575;
         background: #fff;
         transform: translateY(40%);
 
@@ -276,6 +292,10 @@ select {
     display: block !important;
   }
 
+  & ~ .btn {
+    display: none !important;
+  }
+  
   &:disabled {
     color: $material-select-wrapper-input-dropdown-disabled-color;
   }

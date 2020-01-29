@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
-
     @page_title = "Busca"
+    logo
     @msg = ''
 
     q = params[:q]

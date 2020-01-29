@@ -2,12 +2,11 @@ class ContactsController < ApplicationController
   def index
     @contact = Contact.new
     @page_title = "Fale conosco - Previna"
+    logo
   end
 
   def create
-
     @contact = Contact.new(contact_params)
-
     #if verify_recaptcha(model: @register)
       if EmailValidator.valid?(contact_params[:email])
         if @contact.save

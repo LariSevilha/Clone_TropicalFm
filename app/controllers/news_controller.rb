@@ -1,7 +1,6 @@
 class NewsController < ApplicationController
   before_action :set_news, only: :show
 
-
   def index
     @news = ContentBuilder.list_all.page(params[:page]).per(10)
     @page_title = "Notícias"
@@ -25,6 +24,7 @@ class NewsController < ApplicationController
   end
 
   def search
+    logo
     q = params[:q]
     order = {}
     order[:date_publish] = 'desc'

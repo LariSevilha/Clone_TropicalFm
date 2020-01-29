@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
     if image.present?
       @page_image = image
     else
-      @page_image = "https://www.agenciaw3.digital/" + ActionController::Base.helpers.asset_path('logo/logo.png')
+      @page_image = request.base_url + 
+      ActionController::Base.helpers.asset_path('icon.png')
     end
   end
-
 end

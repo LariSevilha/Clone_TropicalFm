@@ -15,7 +15,6 @@
 //= require alert_message
 //= require jquery_ujs
 //= require owl.carousel2
-//= require mask
 //= require turbolinks
 //= require_tree ./scripts
 
@@ -24,7 +23,20 @@ document.addEventListener('turbolinks:load', function() {
   _link.back(
     $('.back')
   );
-  
+
+  _link.current(
+    'active'
+  );
+
+  // mask
+  var masks = ["(00) 0.0000-0000", "(00) 00000-0009"];
+  $(".mask--phone").mask(masks[1], {
+    onKeyPress: function (val, e, field, options) {
+      field.mask(val.length > 14 ? masks[0] : masks[1], options);
+    },
+    placeholder: "(__) ____-____",
+  });
+
   // Tooltips Initialization
   $(function () {
     $("#mdb-lightbox-ui").load("/vendor/assets/mdb-addons/mdb-lightbox-ui.html");
@@ -67,21 +79,4 @@ document.addEventListener('turbolinks:load', function() {
     })
   }catch(e){
   }
-
-  _link.current(
-    'active'
-  );
-
-  // mask
-  $('.mask--phone').keydown(function() {
-    try {
-    	$(this).unmask();
-    } catch (e) {}
-
-    if($(this).val().length < 10){
-      $(this).mask('(00) 0000-0000');
-    } else {
-      $(this).mask('(00) 0000-00009');
-    }
-  });
 });

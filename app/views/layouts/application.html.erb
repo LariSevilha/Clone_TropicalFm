@@ -3,12 +3,11 @@
   <head>
     <%= favicon_link_tag "icon.png" %>
 
-    <!-- Using MDBootstrap 4.12.0 PRO -->
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="theme-color" content="#3D5572">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <%= display_meta_tags og: {
       title: @page_title,
       description: @page_description,
@@ -28,12 +27,15 @@
     <title>
       <%= @page_title %>
     </title>
-    
-    <%= stylesheet_link_tag     "https://use.fontawesome.com/releases/v5.8.2/css/all.css", media: "all", "data-turbolinks-track": "reload" %>
+
+    <!-- Font Awesome -->
+    <%= stylesheet_link_tag     "https://use.fontawesome.com/releases/v5.11.2/css/all.css", media: "all", "data-turbolinks-track": "reload" %>
+    <!-- Google Fonts Roboto -->
+    <%= stylesheet_link_tag     "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap", media: "all", "data-turbolinks-track": "reload" %>
     <%= stylesheet_link_tag     "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag  "application", "data-turbolinks-track": "reload" %>
-    <%#= javascript_include_tag 'https://instashow.w3case.com.br/01-30-2019/elfsight-instagram-feed.js', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag :modernizr %>
+    <%#= javascript_include_tag 'https://instashow.w3case.com.br/01-30-2019/elfsight-instagram-feed.js', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body data-turbolinks="false">
@@ -48,6 +50,5 @@
     <%= render "layouts/content/footer" %>
 
     <%= render "layouts/content/scripts" %>
-
   </body>
 </html>

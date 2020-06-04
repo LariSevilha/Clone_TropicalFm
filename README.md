@@ -1,8 +1,20 @@
 # Skeleton Rails 5
 
-It's based on Rails 5.0.0 and Ruby 2.3.1.
+It's based on Rails 5.0.0 and Ruby 2.3.3.
 
 MDBootstrap 4.16.0 PRO
+
+## Auto-Reload
+
+### Aliases
+
+```
+echo 'alias rr="bundle exec guard"' >> ~/.bash_aliases
+```
+
+### How to use
+Open a console with "rails server" and another console with "bundle exec guard" or if
+your using the alias, just use "rr"
 
 ## How to use
 

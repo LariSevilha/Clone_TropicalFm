@@ -108,10 +108,14 @@ GEM
     elasticsearch-transport (5.0.5)
       faraday
       multi_json
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     email_validator (2.0.1)
       activemodel
     erubi (1.8.0)
     erubis (2.7.0)
+    eventmachine (1.2.7)
     execjs (2.7.0)
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
@@ -120,15 +124,32 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    formatador (0.2.5)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    guard (2.16.2)
+      formatador (>= 0.2.4)
+      listen (>= 2.7, < 4.0)
+      lumberjack (>= 1.0.12, < 2.0)
+      nenv (~> 0.1)
+      notiffany (~> 0.0)
+      pry (>= 0.9.12)
+      shellany (~> 0.0)
+      thor (>= 0.18.1)
+    guard-compat (1.2.1)
+    guard-livereload (2.5.2)
+      em-websocket (~> 0.5)
+      guard (~> 2.8)
+      guard-compat (~> 1.0)
+      multi_json (~> 1.8)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
     hashie (3.6.0)
     htmlcompressor (0.4.0)
+    http_parser.rb (0.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     inline_svg (1.5.2)
@@ -162,6 +183,7 @@ GEM
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    lumberjack (1.2.5)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     medium-editor-rails (2.3.1)
@@ -188,6 +210,7 @@ GEM
     neat (1.8.0)
       sass (>= 3.3)
       thor (~> 0.19)
+    nenv (0.3.0)
     nested_form (0.3.2)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
@@ -195,6 +218,9 @@ GEM
     nio4r (2.4.0)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    notiffany (0.1.3)
+      nenv (~> 0.1)
+      shellany (~> 0.0)
     open4 (1.3.4)
     orm_adapter (0.5.0)
     owlcarousel2-rails (2.2.1)
@@ -203,10 +229,15 @@ GEM
       rake (>= 0.8.1)
     pg (1.1.4)
     polyglot (0.3.5)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     puma (3.12.1)
     rack (2.0.7)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-livereload (0.3.17)
+      rack
     rack-pjax (1.1.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
@@ -297,6 +328,7 @@ GEM
       activemodel (>= 4.1)
       elasticsearch (>= 1)
       hashie
+    shellany (0.0.1)
     simple_form (3.5.1)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
@@ -367,6 +399,8 @@ DEPENDENCIES
   email_validator
   figaro
   friendly_id
+  guard (~> 2.15)
+  guard-livereload
   htmlcompressor
   inline_svg
   jbuilder (~> 2.5)
@@ -383,6 +417,7 @@ DEPENDENCIES
   passenger
   pg
   puma (~> 3.0)
+  rack-livereload
   rails (~> 5.0.0)
   rails-env
   rails_admin

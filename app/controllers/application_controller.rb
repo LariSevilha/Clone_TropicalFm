@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
       @page_image = image
     else
       # Imagem do link (Og:image)
-      # Tamanho mínimo: 600 x 315 pixels
-      # Tamanho recomendado: 1200 x 628 pixels
+      # Tamanho: 1080x1080
+      # Padding: 160px
       @page_image = request.base_url + 
       ActionController::Base.helpers.asset_path('icon.png')
     end

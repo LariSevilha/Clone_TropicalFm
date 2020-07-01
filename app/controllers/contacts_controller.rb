@@ -2,11 +2,14 @@ class ContactsController < ApplicationController
   def index
     @contact = Contact.new
 
-    @page_title = "Fale conosco - Previna"
+    @page_title = "Fale conosco - Skeleton"
     logo
   end
 
   def create
+    @page_title = "Fale conosco - Skeleton"
+    logo
+
     if verify_recaptcha(model: @contact)
       if valid_fields(@contact).errors.empty?
         if @contact.save

@@ -39,5 +39,4 @@ class NewsController < ApplicationController
     @news = ContentBuilder.find_by_slug(params[:slug])
     @news.content_builder_count_reads.create(ip: request.remote_ip)
   end
-
 end

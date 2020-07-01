@@ -1,9 +1,9 @@
 # Configuration all env mail
-SMTP_ADDRESS: 'mail.loginhost.com.br'
+SMTP_ADDRESS: 'smtp.emailemnuvem.com.br'
 SMTP_PORT: '587'
-SMTP_DOMAIN: 'loginhost.com.br'
-SMTP_USER_NAME: 'sendmail@loginhost.com.br'
-SMTP_PASSWORD: 'W3Case6385#@'
+SMTP_DOMAIN: 'agenciaw3.digital'
+SMTP_USER_NAME: 'no-replay@agenciaw3.digital'
+SMTP_PASSWORD: ''
 
 # From email
 SMTP_FROM_MAIL: 'atendimento@agenciaw3.digital'
@@ -20,3 +20,5 @@ RACK_MULTIPART_LIMIT: "0"
 
 RECAPTCHA_SITE_KEY: ""
 RECAPTCHA_SECRET_KEY: ""
+
+DOMAIN: "http://localhost:3000"

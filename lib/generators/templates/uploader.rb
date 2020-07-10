@@ -35,8 +35,10 @@ class <%= class_name %>Uploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  # Use quality to compress the image
   version :thumb do
     process resize_to_fit: [200, 200]
+    process quality: 60
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -28,10 +28,12 @@ class ContentBuilderImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :left_or_right do
     process resize_to_fit: [450, 450]
+    process quality: 60
   end
 
   version :center do
     process resize_to_fit: [900, 900]
+    process quality: 60
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
         if @contact.save
           send_mail
         else
-          flash[:error] = "Erro ao enviar contato"
+          flash[:error] = "Erro ao enviar e-mail, tente novamente"
           render "index"
         end
       else

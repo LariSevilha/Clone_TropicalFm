@@ -18,10 +18,10 @@
         --bg-color-body:#f2f3f9;
         --hr-border-color:lightgray;
       }
-      *{padding:0;margin:0;box-sizing:border-box;font-size:1rem}.header a{padding:2rem;display:flex;justify-content:center;align-items:center;background-color:var(--primary-color)}.header img{width:100%;max-width:60%}.main{padding:2.5rem 3rem;background-color:var(--bg-color-body)}.main p{margin-bottom:.75rem}.hr{margin:1.5rem auto;border:0;border-top:1px solid var(--hr-border-color)}.main .message .content{padding-top:1rem}.footer .developed{padding:0 3rem 1rem;background-color:var(--bg-color-body)}.footer .developed a{display:flex;justify-content:center;align-items:center;text-decoration:none;color:inherit}.footer .developed img{margin-left:.25rem}.footer .copy{padding:1.25rem;text-align:center;background-color:var(--primary-color)}.footer .copy a{text-decoration:none;color:var(--link-copy)}
+      *{padding:0;margin:0;box-sizing:border-box;font-size:1rem}.body{max-width:728px;margin:0 auto;}.header a{padding:2rem;display:flex;justify-content:center;align-items:center;background-color:var(--primary-color)}.header img{width:100%;max-width:60%}.main{padding:2.5rem 3rem;background-color:var(--bg-color-body)}.main p{margin-bottom:.75rem}.hr{margin:1.5rem auto;border:0;border-top:1px solid var(--hr-border-color)}.main .message .content{padding-top:1rem}.footer .developed{padding:0 3rem 1rem;background-color:var(--bg-color-body)}.footer .developed a{display:flex;justify-content:center;align-items:center;text-decoration:none;color:inherit}.footer .developed img{margin-left:.25rem}.footer .copy{padding:1.25rem;text-align:center;background-color:var(--primary-color)}.footer .copy a{text-decoration:none;color:var(--link-copy)}
     </style>
   </head>
-  <body>
+  <body class="body">
     <div class="header">
       <%= link_to @contact['request'] do %>
         <img src="<%= @contact['request'] %><%= image_url('logo.png') %>" />

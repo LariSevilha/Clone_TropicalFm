@@ -12,22 +12,36 @@
       title: @page_title,
       description: @page_description,
       url: request.url,
-      image: @page_image 
-    } %>
-
-    <%= display_meta_tags twitter: { 
-      card: "summary_large_image", 
+      image: {
+        _: @page_image,
+        url: @page_image,
+        type: @page_image_type.present? ? "image/#{@page_image_type}" : "image/jpeg",
+        width: @page_image_width.present? ? @page_image_width : 1080,
+        height: @page_image_height.present? ? @page_image_height : 1080,
+      },
+      type: @page_type.present? ? @page_type : "website",
+      article: { 
+        author: @page_article_author,
+        section: @page_article_section,
+        published_time: @page_article_published_time,
+      },
+      locale: "pt_BR",
+      site_name: "Nova Andradina"
+    },
+    twitter: {
+      card: "summary",
       title: @page_title,
-      description: @page_description, 
-      image: @page_image 
+      description: @page_description,
+      url: request.url,
+      image: {
+        _: @page_image,
+        width: @page_image_width.present? ? @page_image_width : 1080,
+        height: @page_image_height.present? ? @page_image_height : 1080,
+      },
     } %>
 
     <%= csrf_meta_tags %>
-
-    <title>
-      <%= @page_title %>
-    </title>
-
+    
     <!-- Font Awesome -->
     <%= stylesheet_link_tag     "https://use.fontawesome.com/releases/v5.11.2/css/all.css", media: "all", "data-turbolinks-track": "reload" %>
     <!-- Google Fonts Roboto -->

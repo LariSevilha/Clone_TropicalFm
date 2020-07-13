@@ -24,7 +24,7 @@ cp config/application.example.yml config/application.yml &&
 cp config/secrets.example.yml config/secrets.yml &&
 value=`cat .ruby-gemset` &&
 sed -i "s/db/$value/g" config/database.yml &&
-gem install bundle &&
+gem install bundler -v 1.17.3 &&
 bundle install &&
 rake db:create &&
 rake db:migrate &&

@@ -1,8 +1,22 @@
 .dropdown:hover>.dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .dropdown > .dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
-    pointer-events: none;
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+html::-webkit-scrollbar {
+  // Thin
+  width: 6px;
+  // Normal
+  // width: 12px;
+  background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: $primary-color; 
 }

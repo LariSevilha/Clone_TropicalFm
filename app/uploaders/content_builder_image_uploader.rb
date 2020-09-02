@@ -33,7 +33,7 @@ class ContentBuilderImageUploader < CarrierWave::Uploader::Base
 
   version :center do
     process resize_to_fit: [900, 900]
-    process quality: 60
+    process quality: 80
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

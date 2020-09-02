@@ -2,13 +2,15 @@ class ContactsController < ApplicationController
   def index
     @contact = Contact.new
 
-    @page_title = "Fale conosco - Skeleton"
+    @page_title = "Fale conosco - #{site_name}"
     logo
   end
 
   def create
-    @page_title = "Fale conosco - Skeleton"
+    @page_title = "Fale conosco - #{site_name}"
     logo
+    
+    @contact = Contact.new(contact_params)
 
     if verify_recaptcha(model: @contact)
       if valid_fields(@contact).errors.empty?
@@ -30,6 +32,7 @@ class ContactsController < ApplicationController
   def send_mail
     contact = contact_params
     contact['request'] = request.base_url
+    contact['site_name'] = site_name
     contact_params = contact
 
     if ContactMailer.send_mailer(contact_params).deliver_now

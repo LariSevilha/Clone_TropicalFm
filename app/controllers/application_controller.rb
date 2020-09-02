@@ -24,4 +24,8 @@ class ApplicationController < ActionController::Base
       @page_image_type = image_information[:format].downcase
     end
   end
+
+  def site_name
+    return "Skeleton"
+  end
 end

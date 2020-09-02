@@ -14,5 +14,4 @@ class ContentBuilderCountRead < ApplicationRecord
   def slug
     content_builder.slug
   end
-  
 end

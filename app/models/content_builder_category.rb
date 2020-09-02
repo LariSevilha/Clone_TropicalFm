@@ -12,5 +12,4 @@ class ContentBuilderCategory < RailsAdminContentBuilder::ContentBuilderCategory
   def self.categories
     category = ContentBuilderCategory.order(:name)
   end
-
 end

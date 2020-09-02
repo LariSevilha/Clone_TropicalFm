@@ -22,7 +22,5 @@ class Album < ApplicationRecord
     else
       photos&.first&.image
     end
-
   end
-
 end

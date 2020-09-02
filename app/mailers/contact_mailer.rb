@@ -7,7 +7,7 @@ class ContactMailer < ApplicationMailer
     mail(
       to: ENV['SMTP_FROM_MAIL'],
       from: ENV['SMTP_USER_NAME'],
-      subject: 'Nova Andradin - Formulário de contato'
+      subject: "#{@contact['site_name']} - Formulário de contato"
     )  
   end
 end

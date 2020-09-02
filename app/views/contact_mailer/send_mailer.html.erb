@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <% site_name = "Skeleton" %>
-
     <title>
-      Contato - <%= site_name %>
+      Contato - <%= @contact['site_name'] %>
     </title>
 
     <style type="text/css">
@@ -99,7 +96,7 @@
         <% end %>
       </div>
       <div class="copy">
-        <%= link_to site_name, @contact['request'] %>
+        <%= link_to @contact['site_name'], @contact['request'] %>
       </div>
     </div>     
   </body>

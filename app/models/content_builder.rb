@@ -4,9 +4,10 @@ class ContentBuilder < RailsAdminContentBuilder::ContentBuilder
   searchkick batch_size: 50, index_prefix: "skeleton"
 
   belongs_to :content_builder_category
-  has_many :content_builder_count_reads, dependent: :destroy
 
+  has_many :content_builder_count_reads, dependent: :destroy
   has_many :content_builder_archives, dependent: :destroy
+
   accepts_nested_attributes_for :content_builder_archives, allow_destroy: true
 
   def category
@@ -23,31 +24,31 @@ class ContentBuilder < RailsAdminContentBuilder::ContentBuilder
 
   def cover_list
     html ||= Nokogiri::HTML.fragment(content)
-    if html.css('img').present?
-      html.css('img').first['src']
+    if html.css("img").present?
+      html.css("img").first["src"]
     end
   end
 
   def hour_publish
-    date_publish.strftime('%H:%M')
+    date_publish.strftime("%H:%M")
   end
 
   def self.time_now
-    Time.current.strftime('%Y-%m-%d %H:%M')
+    Time.current.strftime("%Y-%m-%d %H:%M")
   end
 
   def self.list_all
-    where(status: true).where('date_publish <= ?', time_now).order('date_publish desc')
+    where(status: true).where("date_publish <= ?", time_now).order("date_publish desc")
   end
 
   def self.list_by_category(category)
     id ||= ContentBuilderCategory.find_by_slug(category)
     where(status: true, content_builder_category_id: id)
-    .where('date_publish <= ?', time_now).order('date_publish desc')
+    .where("date_publish <= ?", time_now).order("date_publish desc")
   end
 
   def self.time_now
-    Time.current.strftime('%Y-%m-%d %H:%M')
+    Time.current.strftime("%Y-%m-%d %H:%M")
   end
 
   def publish_date

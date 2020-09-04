@@ -1,16 +1,16 @@
 class SearchController < ApplicationController
   def index
-    @msg = ''
+    @msg = ""
 
     q = params[:q]
 
     where = {}
 
     order = {}
-    order[:date_publish] = 'desc'
+    order[:date_publish] = "desc"
 
     order_album = {}
-    order_album[:publish_date] = 'desc'
+    order_album[:publish_date] = "desc"
 
     content_builder = ContentBuilder.search(q, order: order)
     albums = Album.search(q, order: order_album)

@@ -10,7 +10,7 @@ class NewsController < ApplicationController
   end
 
   def show
-    @news_categories = ContentBuilderCategory.includes(:content_builders).order(name: 'asc')
+    @news_categories = ContentBuilderCategory.includes(:content_builders).order(name: "asc")
     @last_news = ContentBuilder.list_all.page(params[:page]).per(5)
 
     @page_title = "#{@news.title} - #{site_name}"
@@ -29,14 +29,14 @@ class NewsController < ApplicationController
     @page_title = "#{@category_news} - #{site_name}"
     logo
 
-    render 'index'
+    render "index"
   end
 
   def search
     q = params[:q]
 
     order = {}
-    order[:date_publish] = 'desc'
+    order[:date_publish] = "desc"
 
     @news = ContentBuilder.search(q, order: order)
     
@@ -44,7 +44,7 @@ class NewsController < ApplicationController
     @description = "Acesse pare ver as últimas nóticias"
     logo
 
-    render 'index'
+    render "index"
   end
 
   private

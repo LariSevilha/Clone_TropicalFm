@@ -36,8 +36,8 @@ class ContactsController < ApplicationController
 
   def send_mail
     contact = contact_params
-    contact['request'] = request.base_url
-    contact['site_name'] = site_name
+    contact["request"] = request.base_url
+    contact["site_name"] = site_name
     contact_params = contact
 
     if ContactMailer.send_mailer(contact_params).deliver_now
@@ -59,8 +59,8 @@ class ContactsController < ApplicationController
 
   def valid_fields(i)
     i.attributes.each do |attribute, value|
-      if (attribute != 'id' && attribute != 'created_at' && attribute != 'updated_at') &&
-      (value == '' || value == ' ' || value == nil || !value.present?)
+      if (attribute != "id" && attribute != "created_at" && attribute != "updated_at") &&
+      (value == "" || value == " " || value == nil || !value.present?)
         i.errors.add(attribute, "não pode ficar vazio.")
       end
     end

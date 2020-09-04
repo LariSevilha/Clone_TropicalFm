@@ -3,17 +3,20 @@ pt-BR:
   activerecord:
     models:
       album:
-        one: 'Album'
-        other: 'Albuns'
+        one: "Album"
+        other: "Albuns"
+      contact:
+        one: "E-mail de Contato"
+        other: "E-mails de Contatos"
       content_builder_archive:
-        one: 'Arquivo de Notícias'
-        other: 'Arquivo de Notícias'
+        one: "Arquivo de Notícias"
+        other: "Arquivo de Notícias"
       content_builder:
-        one: 'Notícia'
-        other: 'Notícias'
+        one: "Notícia"
+        other: "Notícias"
       content_builder_category:
-        one: 'Categoria de Notícia'
-        other: 'Categorias de Notícia'
+        one: "Categoria de Notícia"
+        other: "Categorias de Notícia"
       menu:
         one: "Menu"
         other: "Menus"
@@ -24,8 +27,8 @@ pt-BR:
         one: "Link"
         other: "Links"
       photo:
-        one: 'Foto'
-        other: 'Fotos'
+        one: "Foto"
+        other: "Fotos"
       system_parameter: "Parâmetros do Site"
       user:
         one: "Usuário"
@@ -33,17 +36,23 @@ pt-BR:
 
     attributes:
       album:
-        description: 'Descrição'
-        name: 'Nome'
-        photos: 'Fotos'
-        publish_date: 'Data de Publicação'
-        status: 'Ativo?'
+        description: "Descrição"
+        name: "Nome"
+        photos: "Fotos"
+        publish_date: "Data de Publicação"
+        status: "Ativo?"
+      contact:
+        name: "Nome"
+        email: "E-mail"
+        phone: "Telefone"
+        subject: "Assunto"
+        message: "Mensagem"
       content_builder_archive:
-        name: 'Nome'
-        file: 'Arquivo'
+        name: "Nome"
+        file: "Arquivo"
       content_builder:
-        content_builder_archives: 'Arquivos para notícias'
-        cover_news: 'Mostrar na capa?'
+        content_builder_archives: "Arquivos para notícias"
+        cover_news: "Mostrar na capa?"
         count_read: "Visualizações"
         content_builder_category: "Categoria"
         date_publish: "Data para publicação"
@@ -65,8 +74,8 @@ pt-BR:
         type_menu: "Tipo"
         position_menu: "Posição"
       photo:
-        cover: 'Capa?'
-        image: 'Imagem'
+        cover: "Capa?"
+        image: "Imagem"
       system_parameter:
         survey: "Enquete?"
         photo_gallery: "Galeria de Fotos?"

@@ -36,9 +36,7 @@ RailsAdmin.config do |config|
 
     ###  Contact  ###
     config.model 'Contact' do
-      visible false
       navigation_label 'Contatos'
-      #navigation_icon 'icon-user'
       list do
         field :id
         field :name

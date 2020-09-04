@@ -15,7 +15,7 @@ gem "coffee-rails", "~> 4.2"
 gem "devise"
 gem "devise-i18n"
 gem "email_validator"
-gem 'elasticsearch', '~> 5.0.3'
+gem "elasticsearch", "~> 5.0.3"
 gem "figaro"
 gem "friendly_id"
 gem "htmlcompressor"
@@ -35,15 +35,15 @@ gem "rails_admin_rollincode", git: "https://github.com/giovaneperlin/rails_admin
 gem "rails_admin"
 gem "rails_admin-i18n"
 gem "rails_admin_content_builder"
-gem 'rails_admin_dropzone'
+gem "rails_admin_dropzone"
 gem "randumb"
 gem "recaptcha"
 gem "sass-rails", "~> 5.0"
-gem 'searchkick', '2.1.1'
+gem "searchkick", "2.1.1"
 gem "sitemap_generator"
 gem "turbolinks", "~> 5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'uglifier', '~> 4.1', '>= 4.1.20'
+gem "uglifier", "~> 4.1", ">= 4.1.20"
 gem "whenever", require: false
 
 group :development, :test do
@@ -61,9 +61,9 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console"
 
-  gem 'guard', '~> 2.15'
-  gem 'guard-livereload', require: false
-  gem 'rack-livereload'
+  gem "guard", "~> 2.15"
+  gem "guard-livereload", require: false
+  gem "rack-livereload"
 end
 
 group :staging, :production do

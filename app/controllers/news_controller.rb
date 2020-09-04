@@ -15,6 +15,10 @@ class NewsController < ApplicationController
 
     @page_title = "#{@news.title} - #{site_name}"
     @page_description = @news.summary
+    @page_type = "article"
+    @page_article_author = @news.written_by
+    @page_article_section = @news.content_builder_category.name
+    @page_article_published_time = @news.date_publish.iso8601
     logo(@news.cover_list)
   end
 
@@ -30,11 +34,13 @@ class NewsController < ApplicationController
 
   def search
     q = params[:q]
+
     order = {}
     order[:date_publish] = 'desc'
+
     @news = ContentBuilder.search(q, order: order)
     
-    @page_title = "Notícias - #{site_name}"
+    @page_title = "Busca de Notícias - #{site_name}"
     @description = "Acesse pare ver as últimas nóticias"
     logo
 

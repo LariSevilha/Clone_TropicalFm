@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       # Tamanho: 1080x1080
       # Padding: 160px
       @page_image = request.base_url + 
-      ActionController::Base.helpers.asset_path('icon.png')
+      ActionController::Base.helpers.asset_path("logo-shared.jpg")
     end
 
     if !Rails.env.development?

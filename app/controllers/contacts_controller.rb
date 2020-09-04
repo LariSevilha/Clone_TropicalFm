@@ -13,14 +13,19 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if verify_recaptcha(model: @contact)
-      if valid_fields(@contact).errors.empty?
-        if @contact.save
-          send_mail
+      if EmailValidator.valid?(contact_params[:email])
+        if valid_fields(@contact).errors.empty?
+          if @contact.save
+            send_mail
+          else
+            flash[:error] = "Erro ao enviar e-mail, tente novamente"
+            render "index"
+          end
         else
-          flash[:error] = "Erro ao enviar e-mail, tente novamente"
           render "index"
         end
       else
+        flash[:error] = "O formato do email é inválido"
         render "index"
       end
     else

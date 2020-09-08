@@ -4,6 +4,7 @@ class Album < ApplicationRecord
   searchkick batch_size: 50, index_prefix: "skeleton"
 
   has_many :photos, dependent: :destroy
+
   accepts_nested_attributes_for :photos, allow_destroy: true
 
   extend FriendlyId
@@ -15,14 +16,12 @@ class Album < ApplicationRecord
   end
 
   def cover_photo
-    a = photos.where('cover = true')
+    a = photos.where("cover = true")
 
     if a.any?
       a.first&.image
     else
       photos&.first&.image
     end
-
   end
-
 end

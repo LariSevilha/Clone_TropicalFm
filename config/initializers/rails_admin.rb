@@ -36,9 +36,7 @@ RailsAdmin.config do |config|
 
     ###  Contact  ###
     config.model 'Contact' do
-      visible false
       navigation_label 'Contatos'
-      #navigation_icon 'icon-user'
       list do
         field :id
         field :name
@@ -114,7 +112,7 @@ RailsAdmin.config do |config|
     config.model "Menu" do
       navigation_label "Parâmetros"
       visible do
-        true if bindings[:controller].current_user.email == "suporte@agenciaw3.digital"
+        bindings[:controller].current_user.admin
       end
       list do
         field :id
@@ -177,7 +175,7 @@ RailsAdmin.config do |config|
     config.model "SystemParameter" do
       navigation_label "Parâmetros"
       visible do
-        true if bindings[:controller].current_user.email == "suporte@agenciaw3.digital"
+        bindings[:controller].current_user.admin
       end
       list do
         field :survey
@@ -243,6 +241,5 @@ RailsAdmin.config do |config|
     content_builder do
       only ['ContentBuilder']
     end
-
   end
 end

@@ -38,6 +38,12 @@
         width: @page_image_width.present? ? @page_image_width : 1080,
         height: @page_image_height.present? ? @page_image_height : 1080,
       },
+    },
+    product: {
+      price: {
+        amount: @page_product_amount,
+        currency: @page_product_currency,
+      }
     } %>
 
     <%= csrf_meta_tags %>

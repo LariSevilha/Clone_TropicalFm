@@ -1,5 +1,5 @@
 class ContentBuilderCountRead < ApplicationRecord
-  validates :ip, uniqueness: {scope: :content_builder_id}
+  validates :ip, uniqueness: { scope: :content_builder_id }
 
   belongs_to :content_builder
 
@@ -14,5 +14,4 @@ class ContentBuilderCountRead < ApplicationRecord
   def slug
     content_builder.slug
   end
-  
 end

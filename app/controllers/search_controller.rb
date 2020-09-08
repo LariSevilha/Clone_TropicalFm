@@ -1,18 +1,16 @@
 class SearchController < ApplicationController
   def index
-    @page_title = "Busca"
-    logo
-    @msg = ''
+    @msg = ""
 
     q = params[:q]
 
     where = {}
 
     order = {}
-    order[:date_publish] = 'desc'
+    order[:date_publish] = "desc"
 
     order_album = {}
-    order_album[:publish_date] = 'desc'
+    order_album[:publish_date] = "desc"
 
     content_builder = ContentBuilder.search(q, order: order)
     albums = Album.search(q, order: order_album)
@@ -44,5 +42,7 @@ class SearchController < ApplicationController
       array_search, total_count: @result_search_size
     ).page(params[:page])
 
+    @page_title = "Busca - #{site_name}"
+    logo
   end
 end

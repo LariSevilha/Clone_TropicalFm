@@ -2,7 +2,7 @@
 
 It's based on Rails 5.0.0 and Ruby 2.3.3.
 
-MDBootstrap 4.16.0 PRO
+MDBootstrap 4.19.0 PRO
 
 ## Auto-Reload
 

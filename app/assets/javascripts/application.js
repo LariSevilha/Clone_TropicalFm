@@ -37,6 +37,15 @@ document.addEventListener('turbolinks:load', function() {
     placeholder: "(__) ____-____",
   });
 
+  // $(".cnpj").mask("00.000.000/0000-00", {
+  //   reverse: true,
+  //   placeholder: "__.___.___/____-__",
+  // });
+
+  // $(".cep").mask("00000-000", {
+  //   placeholder: "_____-___",
+  // });
+
   // Tooltips Initialization
   $(function () {
     $("#mdb-lightbox-ui").load("/vendor/assets/mdb-addons/mdb-lightbox-ui.html");

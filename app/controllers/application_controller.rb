@@ -26,9 +26,10 @@ class ApplicationController < ActionController::Base
         image_information = MiniMagick::Image.open(@page_image.to_s)
       ensure
 
-      @page_image_width = image_information[:width]
-      @page_image_height = image_information[:height]
-      @page_image_type = image_information[:format].downcase
+        @page_image_width = image_information[:width]
+        @page_image_height = image_information[:height]
+        @page_image_type = image_information[:format].downcase
+      end
     end
   end
 

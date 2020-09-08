@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-      Contato - <%= @contact['site_name'] %>
+      Contato - <%= @contact["site_name"] %>
     </title>
 
     <style type="text/css">
@@ -19,7 +19,7 @@
   </head>
   <body id="body" class="body">
     <div class="header">
-      <%= link_to @contact['request'] do %>
+      <%= link_to @contact["request"] do %>
         <img src="<%= @contact['request'] %><%= image_url('logo.png') %>" />
       <% end %>
     </div>
@@ -41,7 +41,7 @@
         </b>
           da pessoa que enviou é
         <b>
-          <%= @contact['name'] %>
+          <%= @contact["name"] %>
         </b>
       </p>
       <p>
@@ -51,7 +51,7 @@
         </b> 
           informado foi
         <b>
-          <%= @contact['email'] %>
+          <%= @contact["email"] %>
         </b>
       </p>
       <p>
@@ -61,7 +61,7 @@
         </b>
           informado é
         <b>
-          <%= @contact['phone'] %>
+          <%= @contact["phone"] %>
         </b> 
       </p>
 
@@ -73,7 +73,7 @@
         </b>
         
         <div class="content">
-          <%= @contact['subject'] %>
+          <%= @contact["subject"] %>
         </div>
       </div>
       
@@ -85,7 +85,7 @@
         </b>
         
         <div class="content">
-          <%= @contact['message'] %>
+          <%= @contact["message"] %>
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@
         <% end %>
       </div>
       <div class="copy">
-        <%= link_to @contact['site_name'], @contact['request'] %>
+        <%= link_to @contact["site_name"], @contact["request"] %>
       </div>
     </div>     
   </body>

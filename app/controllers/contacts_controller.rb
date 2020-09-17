@@ -41,7 +41,7 @@ class ContactsController < ApplicationController
     contact_params = contact
 
     if ContactMailer.send_mailer(contact_params).deliver_now
-      redirect_to contacts_path, flash: {
+      redirect_to contact_path, flash: {
         notice: "Seus dados foram enviados com sucesso."
       }
     else

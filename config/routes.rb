@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'fotos/:slug' => 'albums#show', as: :album
 
   #Contact
-  get 'contato' => 'contacts#index', :as => :contacts
+  get 'contato' => 'contacts#index', :as => :contact
   post 'contato' => 'contacts#create', :as => :create_contact
 
   #News

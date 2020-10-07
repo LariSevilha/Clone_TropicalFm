@@ -34,6 +34,8 @@ class ApplicationController < ActionController::Base
   end
 
   def site_name
-    return "Skeleton"
+    @site_name = "Skeleton"
+
+    return @site_name
   end
 end

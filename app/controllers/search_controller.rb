@@ -42,7 +42,6 @@ class SearchController < ApplicationController
       array_search, total_count: @result_search_size
     ).page(params[:page])
 
-    @page_title = "Busca - #{site_name}"
-    logo
+    page_info("Busca")
   end
 end

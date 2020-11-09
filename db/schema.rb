@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191008140625) do
+ActiveRecord::Schema.define(version: 20191008140628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,7 +84,8 @@ ActiveRecord::Schema.define(version: 20191008140625) do
 
   create_table "link_categories", force: :cascade do |t|
     t.string   "name"
-    t.bigint   "menu_id"
+    t.integer  "order"
+    t.integer  "menu_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["menu_id"], name: "index_link_categories_on_menu_id", using: :btree
@@ -94,9 +95,10 @@ ActiveRecord::Schema.define(version: 20191008140625) do
     t.string   "name"
     t.string   "url"
     t.string   "image"
-    t.bigint   "link_category_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "internal_link",    default: false
+    t.integer  "link_category_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["link_category_id"], name: "index_links_on_link_category_id", using: :btree
   end
 

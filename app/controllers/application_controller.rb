@@ -1,17 +1,24 @@
 class ApplicationController < ActionController::Base
   require "mini_magick"
+  
+  before_action :page_info
 
   protect_from_forgery with: :exception
 
-  helper_method :logo
+  helper_method :page_info
 
-  def logo(image = nil)
-    if image.present?
-      @page_image = image
-    else
-      # Imagem do link (Og:image)
-      # Tamanho: 1080x1080
-      # Padding: 160px
+  def page_info(name = nil, image = nil)
+    # Imagem shared logo (Og:image)
+    # Tamanho: 1080x1080
+    # Padding: 160px
+
+    @site_name = "WDM Gestão de Obras & Imobiliária"
+    
+    @page_title = @site_name.insert(0, name.present? && name.class.eql?(String) ? "#{name} - " : "")
+
+    if image.present? || (name != nil && !name.class.eql?(String))
+      @page_image = !name.class.eql?(String) ? name : image
+    else 
       @page_image = request.base_url + 
       ActionController::Base.helpers.asset_path("logo-shared.jpg")
     end
@@ -31,11 +38,5 @@ class ApplicationController < ActionController::Base
         @page_image_type = image_information[:format].downcase
       end
     end
-  end
-
-  def site_name
-    @site_name = "Skeleton"
-
-    return @site_name
   end
 end

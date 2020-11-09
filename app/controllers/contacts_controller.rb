@@ -2,13 +2,11 @@ class ContactsController < ApplicationController
   def index
     @contact = Contact.new
 
-    @page_title = "Fale conosco - #{site_name}"
-    logo
+    page_info("Fale Conosco")
   end
-
+  
   def create
-    @page_title = "Fale conosco - #{site_name}"
-    logo
+    page_info("Fale Conosco")
     
     @contact = Contact.new(contact_params)
 

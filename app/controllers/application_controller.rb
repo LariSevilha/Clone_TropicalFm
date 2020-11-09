@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   require "mini_magick"
+  
+  before_action :page_info
 
   protect_from_forgery with: :exception
 

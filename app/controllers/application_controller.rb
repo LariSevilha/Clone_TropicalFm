@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     # Tamanho: 1080x1080
     # Padding: 160px
 
-    @site_name = "WDM Gestão de Obras & Imobiliária"
+    @site_name = "Skeleton MD Rails"
     
     @page_title = @site_name.insert(0, name.present? && name.class.eql?(String) ? "#{name} - " : "")
 

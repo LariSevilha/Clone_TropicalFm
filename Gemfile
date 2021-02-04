@@ -31,7 +31,7 @@ gem "owlcarousel2-rails"
 gem "pg"
 gem "rails", "~> 5.0.0"
 gem "rails-env"
-gem "rails_admin_rollincode", git: "https://github.com/giovaneperlin/rails_admin_theme.git"
+gem 'rails_admin_rollincode', git: 'https://github.com/thefalked/rails_admin_theme'
 gem "rails_admin"
 gem "rails_admin-i18n"
 gem "rails_admin_content_builder"

@@ -82,34 +82,6 @@ ActiveRecord::Schema.define(version: 20191008140628) do
     t.index ["content_builder_category_id"], name: "index_content_builders_on_content_builder_category_id", using: :btree
   end
 
-  create_table "link_categories", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "order"
-    t.integer  "menu_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["menu_id"], name: "index_link_categories_on_menu_id", using: :btree
-  end
-
-  create_table "links", force: :cascade do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "image"
-    t.boolean  "internal_link",    default: false
-    t.integer  "link_category_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.index ["link_category_id"], name: "index_links_on_link_category_id", using: :btree
-  end
-
-  create_table "menus", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "type_menu"
-    t.integer  "position_menu"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string   "image"
     t.boolean  "cover"
@@ -117,22 +89,6 @@ ActiveRecord::Schema.define(version: 20191008140628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_photos_on_album_id", using: :btree
-  end
-
-  create_table "system_parameters", force: :cascade do |t|
-    t.boolean  "survey",             default: false
-    t.boolean  "photo_gallery",      default: false
-    t.boolean  "photo_gallery_home", default: false
-    t.boolean  "video_gallery",      default: false
-    t.boolean  "video_gallery_home", default: false
-    t.boolean  "nav_menu",           default: false
-    t.boolean  "banner",             default: false
-    t.boolean  "big_slide",          default: false
-    t.boolean  "news",               default: false
-    t.boolean  "last_news",          default: false
-    t.boolean  "featured",           default: false
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -158,7 +114,5 @@ ActiveRecord::Schema.define(version: 20191008140628) do
   add_foreign_key "content_builder_count_reads", "content_builders"
   add_foreign_key "content_builder_images", "content_builders"
   add_foreign_key "content_builders", "content_builder_categories"
-  add_foreign_key "link_categories", "menus"
-  add_foreign_key "links", "link_categories"
   add_foreign_key "photos", "albums"
 end

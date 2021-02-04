@@ -13,17 +13,3 @@ User.new({
   :password_confirmation => "w3case2022",
   :admin => true
 }).save
-
-SystemParameter.new({
-  :survey => false,
-  :photo_gallery => false,
-  :photo_gallery_home => false,
-  :video_gallery => false,
-  :video_gallery_home=> false,
-  :nav_menu => false,
-  :banner=> false,
-  :big_slide => false,
-  :news => false,
-  :last_news => false,
-  :featured => false
-}).save

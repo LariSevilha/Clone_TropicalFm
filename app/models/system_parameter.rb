@@ -1,2 +1,0 @@
-class SystemParameter < ApplicationRecord
-end

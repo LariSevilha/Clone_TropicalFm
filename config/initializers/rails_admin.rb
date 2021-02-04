@@ -9,6 +9,8 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_user)
 
+  config.show_gravatar = false
+
   config.authorize_with :cancan
 
   config.actions do
@@ -109,98 +111,12 @@ RailsAdmin.config do |config|
       end
     end
 
-    config.model "Menu" do
-      navigation_label "Parâmetros"
-      visible do
-        bindings[:controller].current_user.admin
-      end
-      list do
-        field :id
-        field :name
-        field :type_menu
-      end
-      edit do
-        field :type_menu
-        field :position_menu
-        field :name
-      end
-    end
-
-    config.model "LinkCategory" do
-      navigation_label "Links"
-      list do
-        field :id
-        field :name
-        field :order
-      end
-      edit do
-        field :menu do
-          inline_add false
-          inline_edit false
-        end
-        field :name
-        field :order
-      end
-    end
-
-    config.model "Link" do
-      navigation_label "Links"
-      list do
-        field :id
-        field :name
-        field :url
-        field :internal_link
-      end
-      edit do
-        field :link_category do
-          inline_add false
-          inline_edit false
-        end
-        field :name
-        field :url
-        field :image
-        field :internal_link
-      end
-    end
-
     ### Photo ###
     config.model 'Photo' do
       visible false
       edit do
         field :image
         field :cover
-      end
-    end
-
-    config.model "SystemParameter" do
-      navigation_label "Parâmetros"
-      visible do
-        bindings[:controller].current_user.admin
-      end
-      list do
-        field :survey
-        field :photo_gallery
-        field :photo_gallery_home
-        field :video_gallery
-        field :video_gallery_home
-        field :nav_menu
-        field :banner
-        field :big_slide
-        field :last_news
-        field :featured
-      end
-      edit do
-        field :survey
-        field :photo_gallery
-        field :photo_gallery_home
-        field :video_gallery
-        field :video_gallery_home
-        field :nav_menu
-        field :banner
-        field :big_slide
-        field :news
-        field :last_news
-        field :featured
       end
     end
 
@@ -230,9 +146,7 @@ RailsAdmin.config do |config|
 
     index
 
-    new do
-      except ['SystemParameter']
-    end
+    new
 
     dropzone do
       only ['Album']

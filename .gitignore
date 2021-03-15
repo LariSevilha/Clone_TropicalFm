@@ -40,3 +40,5 @@
 
 # Ignore images folder
 /imgs/*
+
+**/GEM_HOME/**

@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
 
     @site_name = "Skeleton MD Rails"
     
-    @page_title = @site_name.insert(0, name.present? && name.class.eql?(String) ? "#{name} - " : "")
+    @page_title = name.present? && name.class.eql?(String) ? 
+    "#{name} - #{@site_name}" : @site_name
 
     if image.present? || (name != nil && !name.class.eql?(String))
       @page_image = !name.class.eql?(String) ? name : image

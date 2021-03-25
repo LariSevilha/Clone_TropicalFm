@@ -2,7 +2,6 @@ RailsAdmin.config do |config|
   config.main_app_name = ["Área administrativa"]
   config.default_items_per_page = 20
   config.compact_show_view = false
-  #parametro = SystemParameter.first
 
   config.authenticate_with do
     warden.authenticate! scope: :user
@@ -17,9 +16,9 @@ RailsAdmin.config do |config|
     bulk_delete
 
     ### Album ###
-    config.model 'Album' do
+    config.model "Album" do
 
-      navigation_label 'Albuns'
+      navigation_label "Albuns"
       list do
         field :id
         field :name
@@ -37,8 +36,8 @@ RailsAdmin.config do |config|
     end
 
     ###  Contact  ###
-    config.model 'Contact' do
-      navigation_label 'Contatos'
+    config.model "Contact" do
+      navigation_label "Contatos"
       list do
         field :id
         field :name
@@ -61,9 +60,9 @@ RailsAdmin.config do |config|
     end
 
     ### Content Builder ###
-    config.model 'ContentBuilder' do
+    config.model "ContentBuilder" do
 
-      navigation_label 'Notícia'
+      navigation_label "Notícia"
       list do
         field :id
         field :title
@@ -85,9 +84,9 @@ RailsAdmin.config do |config|
     end
 
     ### Content Builder Categories ###
-    config.model 'ContentBuilderCategory' do
-      navigation_label 'Notícia'
-      # navigation_icon 'icon-user'
+    config.model "ContentBuilderCategory" do
+      navigation_label "Notícia"
+      # navigation_icon "icon-user"
       list do
         field :id
         field :name
@@ -98,12 +97,12 @@ RailsAdmin.config do |config|
     end
 
     ### Content Builder Categories ###
-    config.model 'ContentBuilderCountRead' do
+    config.model "ContentBuilderCountRead" do
       visible false
     end
 
     ### Content Builder Archives ###
-    config.model 'ContentBuilderArchive' do
+    config.model "ContentBuilderArchive" do
       visible false
       edit do
         field :name
@@ -112,7 +111,7 @@ RailsAdmin.config do |config|
     end
 
     ### Photo ###
-    config.model 'Photo' do
+    config.model "Photo" do
       visible false
       edit do
         field :image
@@ -149,11 +148,11 @@ RailsAdmin.config do |config|
     new
 
     dropzone do
-      only ['Album']
+      only ["Album"]
     end
 
     content_builder do
-      only ['ContentBuilder']
+      only ["ContentBuilder"]
     end
   end
 end

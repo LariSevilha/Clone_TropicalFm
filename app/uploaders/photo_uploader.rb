@@ -1,6 +1,5 @@
 # Custom class
 class PhotoUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -35,10 +34,33 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  # Use quality to compress the image
+  # resize_to_limit - Resize the image to fit within the specified dimensions while 
+  # retaining the original aspect ratio. Will only resize the image if it is larger 
+  # than the specified dimensions. The resulting image may be shorter or narrower 
+  # than specified in the smaller dimension but will not be larger than the specified 
+  # values.
+  # resize_to_fit - Resize the image to fit within the specified dimensions while 
+  # retaining the original aspect ratio. The image may be shorter or narrower than 
+  # specified in the smaller dimension but will not be larger than the specified values.
+  # resize_to_fill - Resize the image to fit within the specified dimensions while 
+  # retaining the aspect ratio of the original image. If necessary, crop the image in 
+  # the larger dimension. Optionally, a "gravity" may be specified, for example 
+  # "Center", or "NorthEast".
+  # resize_and_pad - Resize the image to fit within the specified dimensions while 
+  # retaining the original aspect ratio. If necessary, will pad the remaining area 
+  # with the given color, which defaults to transparent (for gif and png, white 
+  # for jpeg). Optionally, a "gravity" may be specified, as above.
   version :thumb do
-    process resize_to_fit: [200, 200]
+    process resize_to_fit: [640, 360]
     process quality: 60
   end
+
+  # Use quality to compress the image
+  # version :thumb_large do
+  #   process resize_to_fit: [1280, 720]
+  #   process quality: 60
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -46,10 +68,21 @@ class PhotoUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  # The same thing could be done using content types. Let's say we need an uploader 
+  # that accepts only images. This can be done like this
+  def content_type_allowlist
+    [/image\//]
+  end
+
+  # You can use a denylist to reject content types. Let's say we need an uploader 
+  # that reject JSON files. This can be done like this
+  def content_type_denylist
+    ["application/text", "application/json"]
+  end
+  
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
-
+  def filename
+    "#{original_filename.gsub(/\.([^.]*)$/, "").parameterize}.#{self.file.extension}"
+  end
 end

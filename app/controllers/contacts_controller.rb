@@ -35,7 +35,7 @@ class ContactsController < ApplicationController
   def send_mail
     contact = contact_params
     contact["request"] = request.base_url
-    contact["site_name"] = site_name
+    contact["site_name"] = @site_name
     contact_params = contact
 
     if ContactMailer.send_mailer(contact_params).deliver_now

@@ -32,14 +32,13 @@
     }
 
 
-    header {
+    #header {
       width: 100%;
       background-color: lightgray;
       text-align: center;
-
     }
 
-    header a {
+    #header a {
       padding: 2rem;
       display: flex;
       justify-content: center;
@@ -47,8 +46,9 @@
       background-color: lightgray;
     }
 
-    header img {
-      width: 60%;
+    #header img {
+      max-width: 60%;
+      height: 150px;
       display: inline-block;
       margin: 12px auto;
     }
@@ -105,11 +105,11 @@
 
 <body id="body" class="body">
   <div id="wrapper">
-    <header>
+    <div id="header">
       <%= link_to @contact["request"] do %>
         <img src="<%= @contact['request'] %><%= image_url('logo.png') %>" />
       <% end %>
-    </header>
+    </div>
     <div class="main">
       <p>
         <b>

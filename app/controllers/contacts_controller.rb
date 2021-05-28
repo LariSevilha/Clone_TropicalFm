@@ -43,7 +43,7 @@ class ContactsController < ApplicationController
         notice: "Seus dados foram enviados com sucesso."
       }
     else
-      flash[:error] = "Falhou. Tente novamente"
+      flash[:error] = "O envio falhou. Tente novamente"
     end
   end
 

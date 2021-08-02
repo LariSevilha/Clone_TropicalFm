@@ -17,7 +17,6 @@ RailsAdmin.config do |config|
 
     ### Album ###
     config.model "Album" do
-
       navigation_label "Albuns"
       list do
         field :id
@@ -61,7 +60,6 @@ RailsAdmin.config do |config|
 
     ### Content Builder ###
     config.model "ContentBuilder" do
-
       navigation_label "Notícia"
       list do
         field :id

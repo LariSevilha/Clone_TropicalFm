@@ -1,10 +1,10 @@
 .social__caption {
   display: block;
 
-  margin: 0 .2em .5em;
+  margin: 0 0.2em 0.5em;
 
-  color: rgba($black, .5);
-  font-size: .7em;
+  color: rgba($black, 0.5);
+  font-size: 0.7em;
   text-transform: uppercase;
 }
 
@@ -16,19 +16,19 @@
   padding: 0;
   border: 0;
   border-radius: 100%;
-  background: rgba($black, .08);
+  background: rgba($black, 0.08);
 
-  color: rgba($black, .5);
-  font-size: .8em;
+  color: rgba($black, 0.5);
+  font-size: 0.8em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
   cursor: pointer;
   outline: none;
-  @include transition(.1s ease);
+  @include transition(0.1s ease);
 
-  &.icon__btn--fb{
+  &.icon__btn--fb {
     &:hover,
     &:focus {
       color: $white !important;
@@ -36,7 +36,7 @@
     }
   }
 
-  &.icon__btn--tw{
+  &.icon__btn--tw {
     &:hover,
     &:focus {
       color: $white !important;
@@ -44,16 +44,16 @@
     }
   }
 
-  &.icon__btn--wa{
+  &.icon__btn--wa {
     &:hover,
     &:focus {
       color: $white !important;
-      background: #56b68b ;
+      background: #56b68b;
     }
   }
 
   + .btn {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   + .link {
@@ -66,42 +66,42 @@
   height: 1.5rem;
   line-height: 1.5rem;
 
-  font-size: .6em;
+  font-size: 0.6em;
 }
 
-.album-modal{
-  .icon__btn--fb{
+.album-modal {
+  .icon__btn--fb {
     color: $white !important;
     background: #4264aa;
     &:hover,
-    &:focus{
+    &:focus {
       opacity: 0.5 !important;
     }
   }
 
-  .icon__btn--tw{
+  .icon__btn--tw {
     color: $white !important;
     background: #6cb7f0;
     &:hover,
-    &:focus{
+    &:focus {
       opacity: 0.5 !important;
     }
   }
 
-  .icon__btn--wa{
+  .icon__btn--wa {
     color: $white !important;
-    background: #56b68b ;
+    background: #56b68b;
     &:hover,
-    &:focus{
+    &:focus {
       opacity: 0.5 !important;
     }
   }
 
-  .icon__btn--pm{
+  .icon__btn--pm {
     color: $white !important;
-    background: $primary ;
+    background: $primary;
     &:hover,
-    &:focus{
+    &:focus {
       opacity: 0.5 !important;
     }
   }
@@ -110,7 +110,7 @@
 @include media($screen-md) {
   .social__caption {
     display: inline-block;
-    margin: 0 .25em;
+    margin: 0 0.25em;
   }
 
   .icon__btn {
@@ -126,6 +126,6 @@
     height: 2rem;
     line-height: 2rem;
 
-    font-size: .8em;
+    font-size: 0.8em;
   }
 }

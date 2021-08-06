@@ -7,18 +7,18 @@
   padding: 0;
   border: 0;
   border-radius: 100%;
-  background: rgba($black, .08);
+  background: rgba($black, 0.08);
 
-  color: rgba($black, .5);
+  color: rgba($black, 0.5);
   font-family: "Roboto";
-  font-size: .8em;
+  font-size: 0.8em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
   cursor: pointer;
   outline: none;
-  @include transition(.1s ease);
+  @include transition(0.1s ease);
 
   &:hover,
   &:focus {
@@ -27,7 +27,7 @@
   }
 
   + .btn {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   + .link {
@@ -40,7 +40,7 @@
   height: 1.5rem;
   line-height: 1.5rem;
 
-  font-size: .6em;
+  font-size: 0.6em;
 }
 
 .icon__btn--small {
@@ -48,7 +48,7 @@
   height: 2rem;
   line-height: 2rem;
 
-  font-size: .7em;
+  font-size: 0.7em;
 }
 
 .icon__btn--large {
@@ -103,7 +103,7 @@
     height: 2rem;
     line-height: 2rem;
 
-    font-size: .8em;
+    font-size: 0.8em;
   }
 
   .icon__btn--small {
@@ -111,7 +111,7 @@
     height: 2.5rem;
     line-height: 2.5rem;
 
-    font-size: .9em;
+    font-size: 0.9em;
   }
 
   .icon__btn--large {

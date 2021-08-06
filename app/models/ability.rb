@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
     if user.admin?
       can :access, :rails_admin
-      can :manage, :all   
+      can :manage, :all
     else
       can :read, :all
     end

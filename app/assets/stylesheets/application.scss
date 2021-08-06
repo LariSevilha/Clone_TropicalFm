@@ -16,18 +16,18 @@
  *= require rails_admin_content_builder
  */
 
-  // librarys
-  @import "bourbon";
-  @import "neat";
+// librarys
+@import "bourbon";
+@import "neat";
 
-  // base
-  @import "base/variables";
-  @import "base/header";
-  @import "base/breakpoints";
+// base
+@import "base/variables";
+@import "base/header";
+@import "base/breakpoints";
 
-  // MDBoostrap
-  @import "css/bootstrap.min";
-  @import "scss/mdb-pro";
+// MDBoostrap
+@import "css/bootstrap.min";
+@import "scss/mdb-pro";
 
-  // components
-  @import "components/index";
+// components
+@import "components/index";

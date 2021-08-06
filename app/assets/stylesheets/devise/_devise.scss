@@ -2,15 +2,15 @@
 
 $devise-white: #fff;
 $devise-black: #000;
-$devise-primary: #1DB69B;
+$devise-primary: #1db69b;
 
 .devise__body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   text-align: center;
 
   line-height: 1.8;
-  padding: .2rem;
+  padding: 0.2rem;
   background: $devise-primary;
 
   label,
@@ -20,8 +20,8 @@ $devise-primary: #1DB69B;
     outline: none;
 
     color: lighten($devise-black, 50%);
-    font-family: 'Open Sans', sans-serif;
-    font-size: .9em;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9em;
     font-weight: normal;
 
     &:hover,
@@ -39,9 +39,8 @@ $devise-primary: #1DB69B;
   padding: 2rem;
 
   background: $devise-white;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
-
 
 .devise__logo {
   margin: 0;
@@ -49,7 +48,7 @@ $devise-primary: #1DB69B;
 
 .devise__title {
   color: $devise-primary;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1em;
   font-weight: 600;
   text-align: center;
@@ -58,30 +57,29 @@ $devise-primary: #1DB69B;
   margin: 0 0 1rem;
 }
 
-
 .devise__field {
   margin-bottom: 1.5rem;
 
   label {
     display: block;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
   }
 
   input {
-    color: rgba($devise-black,.6);
+    color: rgba($devise-black, 0.6);
 
     width: 100%;
 
-    padding: .7rem .9rem;
+    padding: 0.7rem 0.9rem;
 
     border: 0;
-    border-radius: .2rem;
-    background: rgba($devise-black, .05);
+    border-radius: 0.2rem;
+    background: rgba($devise-black, 0.05);
 
-    box-shadow: inset 0 .1rem 0 rgba($devise-black, .05);
+    box-shadow: inset 0 0.1rem 0 rgba($devise-black, 0.05);
 
     &:focus {
-      background: rgba($devise-black,.1);
+      background: rgba($devise-black, 0.1);
     }
   }
 }
@@ -114,7 +112,6 @@ $devise-primary: #1DB69B;
   margin-top: 2rem;
 }
 
-
 .devise__btn {
   cursor: pointer;
 
@@ -124,15 +121,15 @@ $devise-primary: #1DB69B;
   width: 100%;
 
   color: $devise-white !important;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 600 !important;
 
-  padding: .6rem 1.3rem;
+  padding: 0.6rem 1.3rem;
 
   border: 0;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   background: darken($devise-primary, 2%);
-  border-bottom: solid .15rem darken($devise-primary, 10%);
+  border-bottom: solid 0.15rem darken($devise-primary, 10%);
 
   outline: none;
 
@@ -142,8 +139,8 @@ $devise-primary: #1DB69B;
   }
 
   &:active {
-    top: .15rem;
-    padding: .65rem 1.3rem;
+    top: 0.15rem;
+    padding: 0.65rem 1.3rem;
     border: 0;
   }
 }
@@ -153,7 +150,7 @@ $devise-primary: #1DB69B;
 
   a {
     color: $devise-white;
-    font-size: .9em;
+    font-size: 0.9em;
     text-decoration: none;
 
     &:hover {
@@ -161,7 +158,6 @@ $devise-primary: #1DB69B;
     }
   }
 }
-
 
 @media screen and (min-width: 360px) {
   .devise__body {

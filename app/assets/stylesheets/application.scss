@@ -30,4 +30,8 @@
 @import "scss/mdb-pro";
 
 // components
-@import "components/index";
+@import "components";
+
+body {
+  overflow-x: hidden;
+}

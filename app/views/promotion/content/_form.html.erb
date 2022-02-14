@@ -1,0 +1,62 @@
+  <%= form_tag create_promotion_participant_path,
+  method: :post, class: "form w-100 mb-4 mt-2"  do %>
+    <div class="row mr-md-3 mr-lg-5 mx-auto">
+      <div class="col-12">
+        <div class="row">
+          <%= hidden_field_tag :slug , params[:slug] %>
+          <div class="md-form w-100">
+            <%= text_field_tag :name, '', class: "form-control", required: true %>
+            <%= label_tag :name, "Seu nome *" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row mr-md-0">
+          <div class="md-form w-100">
+            <%= text_field_tag :address, '', class: "form-control", required: true %>
+            <%= label_tag :address, "Seu endereço *" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row ml-md-0">
+          <div class="md-form w-100">
+            <%= text_field_tag :number, '', class: "form-control" %>
+            <%= label_tag :number, "Número *" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row mr-md-0">
+          <div class="md-form w-100">
+            <%= text_field_tag :city, '', class: "form-control", required: true %>
+            <%= label_tag :city, "Cidade *" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row ml-md-0">
+          <div class="md-form w-100">
+            <%= text_field_tag :phone, '', class: "form-control", required: true %>
+            <%= label_tag :phone, "Telefone *" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row justify-content-center">
+          <%#= recaptcha_tags %>
+        </div>
+      </div>
+    
+      <div class="col-12 mt-3">
+        <div class="row justify-content-center flex-column ">
+          <span>(*) Campo necessários</span>
+          <br>
+          <i>Seus dados serão enviados para os organizadores da promoção.</i>
+          <i> Ao enviar o formulário você concorda com os termos e condições.</i>          
+          <%= invisible_recaptcha_tags ui: :input, text: "Enviar", 
+          class: "btn btn-primary border-0 mt-3 ml-0" %>
+        </div>
+      </div>
+    </div>
+  <% end %>

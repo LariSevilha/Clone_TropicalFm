@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row py-5">
+    <div class="col mb-4">
+    <h2>Configura abaixo a nossa programação diária</h2>
+    <h5><em>Você não vai querer ficar fora dessa!</em></h5>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center mb-5 flex-wrap button-wrapper">
+      <% @schedules.each do |key, value| %>
+        <button type="button" class="btn waves-effect filter"
+        id="<%= key.parameterize %>"
+        data-rel="<%= key.parameterize %>"><%= key %>   
+        </button>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="gallery w-100 mx-auto d-flex flex-column flex-wrap mx-2" id="gallery">
+    <% @schedules.each do |key, value| %>
+      <% value.each do |schedule_item|%>
+        <div class="mb-3 yellow lighten-4 pics animation <%= key.parameterize %> p-4">
+        <>
+          <h3>
+            <i class="fas fa-microphone"></i>
+            <span>
+              <%= l(schedule_item.hour, format: :hour_short) %>
+            </span>
+            <%= schedule_item.name %>
+          </h3>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  {
+      $("."+selectedClass).fadeIn().addClass('animation');
+      $("#gallery").fadeTo(300, 1);
+      }, 300);
+
+      $("#"+selectedClass).addClass('highlight-day');
+    }
+
+  function initializeSchedule(day) {
+    $(`#${day}`).addClass('highlight-day');
+    selectedClass = $(`#${day}`).attr("data-rel");
+    $("#gallery").fadeTo(100, 0.1);
+    $("#gallery div").not("."+selectedClass).fadeOut().removeClass('animation');
+
+    setTimeout(function() {
+      $("."+selectedClass).fadeIn().addClass('animation');
+      $("#gallery").fadeTo(300, 1);
+      }, 300);
+    }
+  });
+</script>

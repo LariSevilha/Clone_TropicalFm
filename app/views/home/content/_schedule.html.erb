@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center mb-5 flex-wrap button-wrapper">
+      <% @schedules.each do |key, value| %>
+        <button type="button" class="btn waves-effect filter"
+        id="<%= key.parameterize[0..2] %>"
+        data-rel="<%= key.parameterize[0..2] %>">
+          <%= key %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="gallery w-100 mx-auto d-flex flex-column flex-sm-row justify-content-sm-between flex-wrap mx-2" id="gallery">
+    <% @schedules.each do |key, value| %>
+      <% value.each do |schedule_item|%>
+        <div class="mb-3 yellow lighten-4 pics animation <%= key.parameterize[0..2] %> p-4">
+          <h3>
+            <i class="fas fa-microphone"></i>
+            <span>
+              <%= l(schedule_item.hour, format: :hour_short) %>
+            </span>
+            <%= schedule_item.name %>
+          </h3>
+        </div>
+      <% end %>
+    <% end %>
+  </div>  
+</div>

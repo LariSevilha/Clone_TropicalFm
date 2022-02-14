@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row py-5">
+    <div class="col mb-4">
+    <h2>Configura abaixo a nossa programação diária</h2>
+    <h5><em>Você não vai querer ficar fora dessa!</em></h5>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center mb-5 flex-wrap button-wrapper">
+      <% @programacao.each do |key, value| %>
+        <button type="button" class="btn waves-effect filter"
+        id="<%= key.parameterize %>"
+        data-rel="<%= key.parameterize %>"><%= key %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+
+  </div>
+</div>
+

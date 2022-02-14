@@ -1,9 +1,37 @@
 <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+     
+  <nav class="navbar navbar-expand-lg navbar-dark green">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Navbar</a>
+    <span class="text-white text-uppercase ml-1">Ouça ao vivo</span>
 
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation"> 
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <li class="nav-item">
+          <a class="text-white text-uppercase ml-1" href="https://play.google.com/store/apps/details?id=br.com.radiosapp5.tropicalfm879">Baixe nosso aplicativo</a>
+    </li>
+    
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+      <!-- Links -->
+        <li class="nav-item">
+          <a class="text-white text-uppercase ml-1" href="contact">Fale conosco</a>
+        </li>
+      </ul>
+
+      
+    </div>
+  </nav>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark Dark">
+
+    <!-- Navbar brand -->
+    
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
       aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,40 +40,52 @@
 
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="basicExampleNav">
+           <!-- Links -->
+ <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="navbar-brand" href="/">Home</a>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
 
-      <!-- Links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="about">SOBRE NÓS
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="prog">PROGRAMAÇÃO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="promotion">PROMOÇÕES</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="announcer">LOCUTORES</a>
+        </li>
+        <%# <li class="nav-item">
+          <a class="nav-link" href="#">CONTATO</a>
+        </li> %>
         <!-- Dropdown -->
-        <li class="nav-item dropdown">
+              
+       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            aria-haspopup="true" aria-expanded="false">Galerias</a>
+          <div class="dropdown-menu dropdown-green" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href=<%= albums_path %>>Galeria de fotos</a>
+            <a class="dropdown-item" href="video">Galeria de vídeos</a>
+             
           </div>
         </li>
-
       </ul>
+          
       <!-- Links -->
 
-      <form class="form-inline ml-4">
+      <%# <form class="form-inline ml-4">
         <div class="md-form my-0">
           <input class="form-control mr-sm-2 mask--phone" type="text" placeholder="Search" aria-label="Search">
         </div>
-      </form>
+      </form> %>
     </div>
     <!-- Collapsible content -->
 

@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col my-5">
+      <h2 class="mb-4"><%= @promotion.title %></h2>
+      <% if @promotion.image.present? %>
+        <%= image_tag @promotion.image, class: "w-100" %>
+      <% end %>
+    </div>
+
+    <div class="container">
+      <div class="row ml-1">
+        <p class="lead mt-2 mb-5">
+          <em>
+            <%= @promotion.regulation%>
+          </em>
+        </p>
+
+        <% if @promotion.form == true %>
+          <h3 class="mb-4"> 
+            E ai gostou e quer participar? <br> 
+            <em class="h5 font-weight-lighter">
+              Preencha o formulário abaixo.
+            </em>
+          </h3>
+           <%= render 'promotion/content/form'%>     %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

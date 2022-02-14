@@ -1,0 +1,27 @@
+	<div class="container">
+		<div class="row">
+			<div class="container mt-3 mb-4">
+				<h1 class="mt-4"><%= @album.name %></h1>
+				<% if @album.description.present? %>
+					<p class="lead">
+						<em>
+							<%= @album.description.html_safe %>
+						</em>
+					</p>
+				<% end %>
+				<% if @album.photos.present? %>
+					<div class="row">
+						<div class="col-md-12">
+							<div id="mdb-lightbox-ui"></div>
+								<div class="mdb-lightbox">
+									<% @album.photos.each do |photo| %>
+		
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>

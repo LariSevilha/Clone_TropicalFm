@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row py-5">
+    <div class="col-md-12">
+     <h3>Sobre a Tropical</h3>
+      <% @about.each do |p| %>   
+   <div class="card-body">  
+      <h5 class="card-title"> <%= p.title %></h5>  
+      <h5 class="card-title"> <em><%= p.description %></em></h5>
+   </div>
+  </div>
+     <%end%>   
+
+<% @fotoAbout.each do |p| %>   
+  <div class="card" style="width: 18rem; font-weight: 400;">
+     <%= image_tag p.image , class:"card-img-top" %>
+  </div>
+     <%end%>   
+
+</div>
+</div>

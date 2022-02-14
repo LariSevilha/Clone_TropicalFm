@@ -1,0 +1,15 @@
+<h3>Locutores</h3>
+<h5><em> Conheça a galerinha da tropical responsável por animar o seu dia!</em></h5>   
+ 
+ <% @annoucer.each do |p| %>   
+  <div class="card" style="width: 18rem; font-weight: 400;">
+     <%= image_tag p.image , class:"card-img-top" %>
+
+   <div class="card-body">  
+      <h5 class="card-title"> <%= p.text %></h5>
+   </div>
+  </div>
+     <%end%>
+
+
+

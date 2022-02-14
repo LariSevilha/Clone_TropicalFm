@@ -1,4 +1,3 @@
-
 pt-BR:
   activerecord:
     models:
@@ -23,7 +22,12 @@ pt-BR:
       user:
         one: "Usuário"
         other: "Usuários"
-
+      promotion:
+        one: "Promoção"
+        other: "Promoções"
+      announcer:
+        one: "Locutor"
+        other: "Locutores"
     attributes:
       album:
         description: "Descrição"
@@ -60,3 +64,34 @@ pt-BR:
         password: "Senha"
         password_confirmation: "Confirmar senha"
         updated_at: "Atualizado em"
+      photo:
+        description: "Descrição"
+        image: "Imagem"
+        name: "Nome"
+      video:
+        title: "Titulo"
+        publish_date: "Data de publicação"
+        link: "Link do vídeo"
+        description: "Descrição"
+        status: "Ativo?"
+      announcer:
+        announcer: "Locutor"
+        image: "Imagem"
+        text: "Texto"
+      about:
+        about: "Sobre nós"
+        description: "Descrição"
+        image: "Imagem"
+        title: "Titulo"
+      promotion:
+        title: "Titulo"
+        image: "Imagem"
+        start_date: "Data de inicío"
+        finish_date: "Data final"
+        form: "Formulário?"
+        regulation: "Regulamento"
+      programacao:
+        name: "Nome"
+        hour: "Hora"
+        day:  "Dia da semana"
+        status: "Ativo?"

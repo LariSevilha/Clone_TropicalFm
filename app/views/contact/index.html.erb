@@ -1,0 +1,39 @@
+<h2>Possui alguma dúvida ou sugestão?</h2>
+
+<h5>Preencha o formulário e clique em 'Enviar', entraremos em contato o quanto antes.</h5>
+
+<div  class="container">
+  <%= form_for @contacts, url:contact_path, html: {class: "form"} do |i|%>
+
+  <div class="right">
+    <div >  
+      <%=i.label :name, "Seu nome *", class:"form_label"   %><br>
+      <%=i.text_field :name, class:"form_input",required: true%>
+    </div>
+    <div> 
+      <%=i.label :Topic, "Assunto *", class:"form_label" %> <br>
+        <%=i.text_field :topic, class:"form_input",required: true %>
+    </div>
+  </div>
+  <div class="left">
+    <div>
+        <%=i.label :email, "Seu e-mail * ", class:"form_label"   %><br>
+        <%=i.text_field :email, class:"form_input_left", required: true%>
+    </div>
+    <div>
+      <%=i.label :telefone, "Seu telefone", class:"form_label"   %> <br>
+        <%=i.text_field :telefone, class:"form_input_left",required: true %>
+    </div>
+  </div>
+    <br>
+      <div class="msg">
+        <%=i.label :mensage, "Sua mensagem *", class:"form_label_mensage"   %> <br>
+          <%=i.text_field :mensage, class:"form_input_msg",required: true %>      
+      </div>
+  <div class = "submit">
+     <span class="form_info">(*) Campo necessários</span> <br>
+    <%=i.submit "Enviar", :class => 'submit_buttom' %>
+  </div>
+<%end%> 
+</div>
+</div>

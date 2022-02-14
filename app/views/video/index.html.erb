@@ -1,0 +1,35 @@
+<%#   
+
+<div class="card" style="width: 18rem; font-weight: 400;">
+  <img src="https://cdn1.tropical87fm.com.br//uploads/photo/image/61/coming-home-1371162-1280x960.jpg" class="card-img-top" alt="ezra">
+  <div class="card-body">
+    <h5 class="card-title">Video</h5>
+    <p class="card-text">
+      <a href="albums#show" class="stretched-link text-info" style="position: relative; left:160px; font-weight: 700; font-size:18px;">Ver mais >></a>
+    </p>
+
+  </div>
+</div> %>
+
+<div class="container">
+   <div class="row">
+		<div class="container-fluid mt-4 mb-2">
+       <h3>Vídeos</h3>
+         <h5><em> Uma coletânea de vídeos que achamos bacanas e gostaríamos de compartilhar com vocês!</em></h5>   
+     </div>
+  </div>
+</div>
+
+   <div class="card" style="width: 18rem; font-weight: 400;">
+      <% @videos.each do |p| %>   
+       <div class="card" style="width: 18rem; font-weight: 400;">
+          <%= p.videos , class:"card-img-top" %>
+
+   <div class="card-body">  
+      <h5 class="card-title"> <%= p.title %></h5>
+   </div>
+  </div>
+     <%end%>
+
+
+

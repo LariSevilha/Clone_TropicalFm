@@ -1,0 +1,47 @@
+ <%# <% @photo.each do |p| %>   
+   <%# <div class="card" style="width: 18rem; font-weight: 400;">
+      <%= image_tag p.image , class:"card-img-top" %>
+         <%# <div class="card-body">  
+         <h5 class="card-title"> <%= p.name %></h5>
+          <%# <a href = "photo"class="btn btn-primary">Ver  Mais</a>
+        </div> %> 
+      <%# </div>
+    </div>
+     <% end %> 
+ <%# </div> %> 
+
+
+ <% if @albums.present? %>
+  <div class="row"> 
+    <% @albums.each do |album| %>    
+      <div class="col-sm-6 col-md-6 my-3">
+        <div class="p-0 card h-100">
+          <div class="view overlay">
+            <%= link_to album_path(album) do %>     
+              <% if album.cover_photo.present? %>
+                <%= image_tag album.cover_photo.url, class: "card-img-top", alt: album.name %>
+              <% else %>
+                <%= image_tag 'logo.png'%>
+              <% end %>   
+            <% end %>   
+          </div>
+
+          <div class="card-body">
+            <a class="activator waves-effect waves-light mr-4"></a>
+            <h4 class="card-title">
+              <%= link_to album.name, album_path(album), class: "black-text" %>
+            </h4>
+            <hr>
+            <%= link_to album_path(album), class: "text-primary d-flex justify-content-end align-items-center" do %>
+              <h5 class="m-0">Ver mais  <i class="fas fa-angle-double-right"></i></h5>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+    <% end %>
+  </div>
+<% else %> 
+  <%# Sinto muito, não temos nada em nosso album     %>
+<% end %>
+    

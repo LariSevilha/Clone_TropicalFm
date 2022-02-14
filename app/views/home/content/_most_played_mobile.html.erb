@@ -1,0 +1,30 @@
+<div id="carousel-most-played-mob" class="carousel d-sm-none slide carousel-multi-item carousel-multi-item-2" data-ride="carousel">
+  <div class="carousel-inner carousel-most-played" role="listbox">
+    <% if @hits_mobile.present? %>
+      <% @hits_mobile.each_with_index do |hit, index| %>
+        <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+          <div class="col mb-3">
+            <div class="card">
+              <iframe
+                width="100%" height="100%" src="https://www.youtube.com/embed/<%= hit.code %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+              <div class="w-100 most-played-legend green lighten-4 p-2">
+                <span class="icon-most-played">
+                  <%= hit.colocation.to_i %>ª
+                </span>
+                <p class="most-played-title">
+                  Mais Tocada
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="controls-top">
+    <a class="black-text" href="#carousel-most-played-mob" data-slide="prev"><i class="fas fa-angle-left fa-3x pr-3"></i></a>
+    <a class="black-text" href="#carousel-most-played-mob" data-slide="next"><i class="fas fa-angle-right fa-3x pl-3"></i></a>
+  </div>
+</div>

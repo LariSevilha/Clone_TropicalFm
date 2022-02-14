@@ -1,0 +1,7 @@
+<div class="banners banners--content">
+  <% banners_ads(728, 90, 4, 1).each do |banner| %>
+    <div class="banner">
+      <%= show_banner_ad(banner, 728, 90) %>
+    </div>
+  <% end %>
+</div>

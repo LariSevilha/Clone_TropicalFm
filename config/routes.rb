@@ -13,7 +13,6 @@ Rails.application.routes.draw do
         get 'announcer', to: 'announcer#index', as: :announcer
         get 'contact', to: 'contact#index', as: :contact
         get 'about', to: 'about#index', as: :about 
-        get 'video', to: 'video#index', as: :video
         get 'prog', to: 'prog#index', as: :prog
 
 
@@ -21,7 +20,10 @@ Rails.application.routes.draw do
         #album
         get "fotos", to: "albums#index", as: :albums
         get "fotos/:slug", to: "albums#show", as: :album
-
+        
+        #video
+        get 'video', to: 'video#index', as: :video
+        get "videos/:slug", to: "video#show", as: :videos
 end
 
 

@@ -9,14 +9,15 @@
 						</em>
 					</p>
 				<% end %>
-				<% if @album.photos.present? %>
+				<% if @album.image.present? %>
 					<div class="row">
 						<div class="col-md-12">
 							<div id="mdb-lightbox-ui"></div>
 								<div class="mdb-lightbox">
-									<% @album.photos.each do |photo| %>
-		
-									<% end %>
+									<%# @album.each do |photo| %>
+										<%#= image_tag(photo.image) %>
+									<%# end %>
+									<%= image_tag(@album.image) %>
 								</div>
 							</div>
 						</div>

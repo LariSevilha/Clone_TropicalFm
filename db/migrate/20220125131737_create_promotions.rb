@@ -6,7 +6,7 @@ class CreatePromotions < ActiveRecord::Migration[5.0]
       t.text :regulation
       t.datetime :start_date
       t.datetime :finish_date
-      t.boolean :status
+      t.boolean :status, default: true
       t.boolean :form
       t.string :slug
 

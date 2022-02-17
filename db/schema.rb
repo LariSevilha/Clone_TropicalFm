@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220202174950) do
+ActiveRecord::Schema.define(version: 20220216125443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20220202174950) do
   create_table "albums", force: :cascade do |t|
     t.string   "slug"
     t.string   "name"
+    t.boolean  "cover"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -45,10 +46,10 @@ ActiveRecord::Schema.define(version: 20220202174950) do
     t.datetime "finish_date"
     t.string   "url"
     t.string   "file_ad"
-    t.boolean  "status"
+    t.boolean  "status",       default: true
     t.integer  "format_ad_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -124,6 +125,12 @@ ActiveRecord::Schema.define(version: 20220202174950) do
     t.string   "image"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "programacaos", force: :cascade do |t|
     t.string   "name"
     t.time     "hour"
@@ -139,20 +146,20 @@ ActiveRecord::Schema.define(version: 20220202174950) do
     t.text     "regulation"
     t.datetime "start_date"
     t.datetime "finish_date"
-    t.boolean  "status"
+    t.boolean  "status",      default: true
     t.boolean  "form"
     t.string   "slug"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "schedules", force: :cascade do |t|
     t.string   "name"
     t.time     "hour"
-    t.boolean  "status"
+    t.boolean  "status",     default: true
     t.integer  "day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "slides", force: :cascade do |t|
@@ -183,12 +190,12 @@ ActiveRecord::Schema.define(version: 20220202174950) do
   create_table "videos", force: :cascade do |t|
     t.string   "title"
     t.datetime "publish_date"
-    t.boolean  "status"
+    t.boolean  "status",       default: true
     t.string   "slug"
     t.string   "link"
     t.string   "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_foreign_key "content_builder_archives", "content_builders"

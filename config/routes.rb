@@ -12,7 +12,6 @@ Rails.application.routes.draw do
         get 'promotion', to: 'promotion#index', as: :promotion
         get 'announcer', to: 'announcer#index', as: :announcer
         get 'contact', to: 'contact#index', as: :contact
-        get 'photo', to: 'photo#index', as: :photo       
         get 'about', to: 'about#index', as: :about 
         get 'video', to: 'video#index', as: :video
         get 'prog', to: 'prog#index', as: :prog
@@ -20,8 +19,8 @@ Rails.application.routes.draw do
 
 
         #album
-        get "fotos" => "album#index", as: :albums
-        get "fotos/:slug" => "albums#show", as: :album
+        get "fotos", to: "albums#index", as: :albums
+        get "fotos/:slug", to: "albums#show", as: :album
 
 end
 

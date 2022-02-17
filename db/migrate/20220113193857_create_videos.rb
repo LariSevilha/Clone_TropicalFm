@@ -3,7 +3,7 @@ class CreateVideos < ActiveRecord::Migration[5.0]
     create_table :videos do |t|
       t.string :title
       t.datetime :publish_date
-      t.boolean :status
+      t.boolean :status, default: true
       t.string :slug
       t.string :link
       t.string :description

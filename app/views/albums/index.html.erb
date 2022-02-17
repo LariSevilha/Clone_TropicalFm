@@ -1,0 +1,17 @@
+<div class="container">
+   <div class="row mb-3">
+		 <div class="container mt-3 mb-4">
+      <h1 class="mt-4">Galeria de Fotos</h1>
+      <p class="lead">
+        <em>
+           As fotos podem eternizar os momentos, confira abaixo alguns que marcaram a tropical até aqui.
+        </em>
+      </p>
+    </div>
+		<%= render "albums/content/card" %>
+	</div>
+	  <%= paginate @album if @album.present? %> 
+  </div>
+
+
+ 

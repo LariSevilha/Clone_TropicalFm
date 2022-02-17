@@ -6,7 +6,7 @@ class CreateBannerAds < ActiveRecord::Migration[5.0]
       t.datetime :finish_date
       t.string :url
       t.string :file_ad
-      t.boolean :status
+      t.boolean :status, default: true
       t.integer :format_ad_id
 
       t.timestamps

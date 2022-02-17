@@ -49,9 +49,14 @@ RailsAdmin.config do |config|
        list do
          field :id
          field :image
+         field :name
+         field :status
       end
      edit do
         field :image 
+        field :name
+        field :description, :wysihtml5
+        field :status 
       end
     end 
   config.model "Video" do
@@ -65,7 +70,8 @@ RailsAdmin.config do |config|
        field :title
        field :link
        field :publish_date
-       field :description, :wysihtml5   
+       field :description, :wysihtml5
+       field :status
      end
   end 
   config.model "About" do

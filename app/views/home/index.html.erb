@@ -1,5 +1,6 @@
-<% banners_topo = banners_ads(728, 90, 4, 6).to_a %>
-<% banners_destaque = banners_ads(468, 60, 1, 4).to_a %>
+<% banners_topo = banners_ads(468, 60, 4, 6).to_a %>
+<% banners_destaque = banners_ads(728, 90, 2, 4).to_a %>
+<% banners_lateral = banners_ads(300, 100, 2, 4).to_a %>
 
 <div class="home-slides grey lighten-5">
   <div class="container">
@@ -10,20 +11,31 @@
         <h5 class="mb-3">
           <%= l(Time.zone.now, format: :medium) %>
         </h5>
-
-        <%= render "home/content/slides" %>
+            <%= render "home/content/slides" %>
       </div>
     </div>
   </div>
 </div>
 
+
 <div class="home-most_played">
   <div class="container mt-5">
     <%= render 'layouts/includes/banner_header', banner: banners_topo, only_featured: false %>
-
-    <%= render "home/content/most_played" %>
   </div>
 </div>
+
+
+    <%# <%= render "home/content/most_played" %> 
+    <%# <%= render 'video/content/card' %> 
+
+
+<div class="home-most_played">
+  <div class="container mt-5">
+    <%= render 'layouts/includes/banner_header', banner: banners_lateral, only_featured: false %>
+     </div>
+</div>
+ 
+
 
 <div class="home-schedule grey lighten-5">
     <%= render "home/content/schedule" %>

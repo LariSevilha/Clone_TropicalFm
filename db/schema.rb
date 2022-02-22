@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20220216125443) do
     t.string   "name"
     t.boolean  "cover"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "publish_date"
+    t.boolean  "status",       default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "image"
   end
 

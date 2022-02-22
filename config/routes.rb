@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
         root to: 'home#index'
-        get 'promotion', to: 'promotion#index', as: :promotion
+       
         get 'announcer', to: 'announcer#index', as: :announcer
         get 'contact', to: 'contact#index', as: :contact
         get 'about', to: 'about#index', as: :about 
@@ -24,6 +24,10 @@ Rails.application.routes.draw do
         #video
         get 'video', to: 'video#index', as: :video
         get "videos/:slug", to: "video#show", as: :videos
+
+        #promotion
+        get 'promotion', to: 'promotion#index', as: :promotion
+        get "promotion/:slug", to: "promotion#show", as: :promotions
 end
 
 

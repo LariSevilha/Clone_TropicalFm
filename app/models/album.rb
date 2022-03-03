@@ -14,10 +14,6 @@ class Album < ApplicationRecord
     def cover_photo
       a = Album.where(cover: true)
   
-      if a.any?
-        a.first&.image
-      else
-        image&.first&.image
-      end
+       
     end
 end

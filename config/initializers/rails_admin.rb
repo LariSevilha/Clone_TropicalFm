@@ -163,6 +163,21 @@ RailsAdmin.config do |config|
   end      
 end
 
+ ###  Top Hit ###
+ config.model 'TopHit' do
+  navigation_label 'Músicas Mais Tocadas'      
+  list do        
+    field :colocation        
+    field :link
+    field :active
+  end
+  edit do        
+    field :link
+    field :colocation
+    field :active
+  end
+end
+
 ###  BannerAds  ###
 config.model 'FormatAd' do
   navigation_label 'Banners'

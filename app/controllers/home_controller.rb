@@ -11,11 +11,13 @@ class HomeController < ApplicationController
     @videos = Video.where("publish_date <= ?", Time.current)
     .where(status: true).order(publish_date: "DESC").page(params[:page]).per(3) 
 
-    @albums = Album.where("publish_date <= ?", Time.current)
-    .where(status: true).page(params[:page]).per(3)
+     @albums = Album.where("publish_date <= ?", Time.current)
+     .where(status: true).page(params[:page]).per(3)
 
-    # @hits_mobile = TopHit.active_and_ordered
-    # @hits_desktop = @hits_mobile.each_slice(3)
+    @albums = Album.all()
+
+    #  @hits_mobile = TopHit.active_and_ordered
+    #  @hits_desktop = @hits_mobile.each_slice(3)
 
      @schedules = Schedule.ordered_and_grouped
   end

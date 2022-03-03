@@ -13,12 +13,13 @@
 
 
  <% if @album.present? %>
+
   <div class="row"> 
     <% @album.each do |album| %>    
       <div class="col-sm-6 col-md-6 my-3">
         <div class="p-0 card h-100">
           <div class="view overlay">
-            <%= link_to album_path(album) do %>     
+            <%= link_to album_path(album.slug) do %>     
               <% if album.cover_photo.present? %>
                 <%= image_tag album.cover_photo.url, class: "card-img-top", alt: album.name %>
               <% else %>
@@ -26,7 +27,7 @@
               <% end %>   
             <% end %>   
           </div>
-
+  
           <div class="card-body">
             <a class="activator waves-effect waves-light mr-4"></a>
             <h4 class="card-title">
@@ -43,6 +44,6 @@
     <% end %>
   </div>
 <% else %> 
-  <%# Sinto muito, não temos nada em nosso album     %>
+  <h6> Sinto muito, não temos nada em nosso album    </h6> 
 <% end %>
     
